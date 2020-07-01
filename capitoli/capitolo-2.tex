@@ -3,11 +3,177 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Processi e metodologie}
+\chapter{Stage}
 \label{cap:processi-metodologie}
 %**************************************************************
 
-\intro{Brevissima introduzione al capitolo}\\
+%\intro{Brevissima introduzione al capitolo}\\
 
-%**************************************************************
-\section{Processo sviluppo prodotto}
+\section{Progetto}
+
+\myCompany{} \companyTitle{} fornisce diversi strumenti per eliminare l'utilizzo di documenti cartacei all’interno delle aziende, in modo da agevolare e tracciare il trasferimento delle informazioni. Oltre a \myCompany{} \companyTitle, il progetto coinvolge anche la start-up Commerc.io che gestisce lo scambio di documenti siglati da firme elettroniche tramite una propria blockchain.
+\\
+Lo scopo del progetto di stage è la realizzazione di un applicativo che veda l'integrazione, tramite la blockchain sviluppata da Commerc.io, di identità digitali basate su self-sovereign identity e sulla notarizzazione di processi di condivisione e sottoscrizione, con firme elettroniche, dei documenti fiscali.
+\\
+Con self-sovereign identity si intende un meccanismo che permette agli individui di certificare la propria identità digitale, senza bisogno che un garante esterno lo faccia per loro.
+\\
+Tutto questo dovrà essere integrato all'interno dei processi di digital transformation di \myCompany{} \companyTitle.
+\\
+Lo studente dovrà, inizialmente, effettuare uno studio ed un'analisi dettagliata della documentazione del progetto Commerc.io nel contesto dei documenti fiscali, in modo da approfondire le tecnologie riguardanti la blockchain. Dovrà poi essere sviluppato un \textit{proof of concept}, che si servirà delle API appositamente implementate da Commerc.io per l'interazione con la loro rete \textit{commercio.network}.
+\\
+L'attività di sviluppo prevederà, oltre all'analisi iniziale, un periodo di progettazione, che dovrà essere opportunamente argomentata e documentata. Il prototipo finale, risultante dall'attività di codifica, dovrà permettere l'interazione con la blockchain di Commerc.io per il riconoscimento delle identità digitali e la creazione di transazioni per la trasmissione di documenti.
+\\
+Durante questo progetto di stage lo studente avrà occasione di approfondire le sue conoscenze nell'ambito delle blockchain, le tecnologie che le riguardano ed il loro utilizzo in situazioni reali.
+\\
+In particolare lo studio si concentrerà sulla:
+\begin{itemize}
+	\item familiarizzazione col contesto aziendale di fatturazione elettronica;
+	\item comprensione del funzionamento di una blockchain;
+	\item integrazione di identità digitali tramite self-sovereign identity, sfruttando la blockchain;
+	\item applicazione della blockchain per garantire l'integrità di documenti condivisi;
+	\item applicazione della blockchain per implementare un servizio di decentralized identifier (DID).
+\end{itemize}
+
+
+\section{Obiettivi}
+
+\subsection*{Classificazione}
+Si farà riferimento ai requisiti secondo la seguente classificazione, la quale permette di identificarli univocamente:
+\begin{itemize}
+	\item \textbf{RO-X:} requisiti obbligatori, vincolanti in quanto obiettivo primario richiesto dall'azienda proponente;
+	\item \textbf{RD-X:} requisiti desiderabili, non vincolanti o strettamente necessari, ma dal riconoscibile valore aggiunto;
+	\item \textbf{RF-X:} requisiti facoltativi, rappresentanti valore aggiunto non strettamente competitivo.
+\end{itemize}
+
+Nelle sigle precedentemente indicate, \textbf{X} è un numero intero progressivo maggiore di zero con funzione di identificativo del requisito.
+
+\subsection*{Definizione}
+Si prevede lo raggiungimento dei seguenti obiettivi.
+
+\subsubsection*{Obbligatori}
+\begin{itemize}
+	\item \textbf{RO-1:} acquisizione delle competenze sulle tematiche relative alla blockchain e alle tecnologie associate;
+	\item \textbf{RO-2:} implementazione di un \textit{proof of concept} che permetta l'interazione con la blockchain di Commerc.io per il riconoscimento delle identità digitali e la trasmissione di documenti, tramite un'interfaccia grafica basilare;
+	\item \textbf{RO-3:} stesura della documentazione relativa ai risultati ottenuti nel corso delle varie fasi del progetto e alla gestione delle difficoltà incontrate;
+	\item \textbf{RO-4:} stesura della relazione riguardante il lavoro svolto durante tutto il periodo di stage.
+\end{itemize}
+
+\subsubsection*{Desiderabili}
+\begin{itemize}
+	\item \textbf{RD-1:} implementazione di un'interfaccia web completa per il \textit{proof of concept}.
+\end{itemize}
+
+\subsubsection*{Facoltativi}
+\begin{itemize}
+	\item \textbf{RF-1:} sviluppo di un'applicazione mobile in Flutter che offra le funzionalità richieste per il \textit{proof of concept}.
+\end{itemize} 
+
+
+\section{Prodotti}
+
+Lo studente al termine del periodo si stage dovrà fornire i seguenti prodotti all'azienda proponente \myCompany{} \companyTitle.
+\subsubsection*{Obbligatori}
+\begin{itemize}
+	\item il \textit{proof of concept} che mostri il funzionamento della gestione delle identità digitali e del trasferimento di documenti tramite \textit{blockchain}, che faccia uso delle API sviluppate da Commerc.io e offra una semplice interfaccia per il suo utilizzo;
+	\item la documentazione dettagliata dei risultati ottenuti, comprendente un'analisi critica delle difficoltà riscontrate e delle soluzioni adottate;
+	\item una relazione che illustri le attività svolte e i prodotti realizzati;
+	\item una presentazione finale del lavoro svolto, da esporre in azienda.
+\end{itemize}
+
+\subsubsection*{Desiderabili}
+\begin{itemize}
+	\item un'interfaccia web completa che permetta l'utilizzo del \textit{proof of concept}.
+\end{itemize}
+
+\subsubsection*{Facoltativi}
+\begin{itemize}
+	\item un'applicazione mobile scritta in Flutter che offra le funzionalità richieste dal progetto.
+\end{itemize} 
+
+
+\section{Pianificazione}
+
+Le attività di progetto saranno scandite dalla seguente pianificazione, per un totale di 300 ore.
+
+\begin{tabularx}{\textwidth}{|c|c|c|p{7.85cm}|}
+	\hline
+	\textbf{Settimana} & \textbf{Date} & \textbf{Ore di lavoro} & \textbf{Descrizione dell'attività} \\\hline
+	I & 06/05/2020 - 08/05/2020 & 20 & Studio dei concetti fondamentali legati alla blockchain e del contesto aziendale. \\\hline
+	II & 11/05/2020 - 15/05/2020 & 40 & Studio approfondito della blockchain di Commerc.io e delle funzionalità da implementare. \\\hline
+	III & 18/05/2020 - 22/05/2020 & 40 & Implementazione e verifica delle funzionalità offerte ad un account registrato. \\\hline
+	IV & 25/05/2020 - 29/05/2020 & 40 & Implementazione e verifica delle funzionalità di gestione dell'identità digitale. \\\hline
+	V & 01/06/2020 - 05/06/2020 & 40 & Implementazione e verifica delle funzionalità di condivisione di documenti. \\\hline
+	VI & 08/06/2020 - 12/06/2020 & 40 & Implementazione dell'interfaccia grafica e validazione del prototipo. \\\hline
+	VII & 15/06/2020 - 19/06/2020 & 40 & Stesura della documentazione ed inizio della relazione. \\\hline
+	VIII & 22/06/2020 - 26/06/2020 & 40 & Termine stesura della relazione e presentazione di quanto svolto in azienda. \\\hline
+\end{tabularx}
+
+\subsection*{Prima settimana}
+\begin{itemize}
+	\item studio dei concetti fondamentali legati alla blockchain;
+	\item formazione riguardo il contesto aziendale della fatturazione elettronica;
+	\item studio della documentazione della blockchain sviluppata da Commerc.io.
+\end{itemize}
+
+\subsection*{Seconda settimana} 
+\begin{itemize}
+	\item studio della funzione di un account riferito alla blockchain di Commerc.io, con particolare attenzione al concetto di wallet;
+	\item studio della creazione e del mantenimento di un'identità digitale all'interno della blockchain e delle sue possibili interazioni con essa;
+	\item studio delle API sviluppate da Commerc.io per la gestione dei documenti tramite la blockchain.
+\end{itemize}
+
+\subsection*{Terza settimana}
+\begin{itemize}
+	\item implementazione delle seguenti funzionalità, relative ad un account nella blockchain di Commerc.io:
+	\begin{itemize}
+		\item generazione ed importazione di un HD Wallet;
+		\item richiesta, ricezione ed invio di Token tra diversi account, all'interno della blockchain;
+		\item controllo del bilancio di uno specifico account;
+		\item acquisizione e perdita dello stato di Validator per i Token utilizzati nella blockchain;
+	\end{itemize}
+	\item verifica delle funzionalità implementate.
+\end{itemize}
+
+\subsection*{Quarta settimana} 
+\begin{itemize}
+	\item implementazione delle seguenti funzionalità, relative alla gestione dell'identità digitale nella blockchain di Commerc.io:
+	\begin{itemize}
+		\item utilizzo e gestione di DID (Decentralized Identifier);
+		\item funzioni legate ad un DID: creazione di un DDO (DID Document), richiesta di deposito e richiesta di power up;
+		\item gestione degli inviti ad una connessione;
+		\item gestione delle credenziali verificabili;
+	\end{itemize}
+	\item verifica delle funzionalità implementate.
+\end{itemize}
+
+\subsection*{Quinta settimana} 
+\begin{itemize}
+	\item implementazione delle seguenti funzionalità, relative alla gestione e allo scambio di documenti nella blockchain di Commerc.io:
+	\begin{itemize}
+		\item condivisione di un documento;
+		\item invio di una ricevuta;
+		\item gestione delle liste di documenti e ricevute;
+	\end{itemize}
+	\item verifica delle funzionalità implementate.
+\end{itemize}
+
+\subsection*{Sesta settimana} 
+\begin{itemize}
+	\item implementazione dell'interfaccia grafica per la fruizione, da parte degli utenti, delle funzionalità implementate;
+	\item validazione del \textit{proof of concept} e verifica dell'integrazione con l'interfaccia.
+\end{itemize}
+
+\subsection*{Settima settimana} 
+\begin{itemize}
+	\item stesura della documentazione relativa a quanto sviluppato;
+	\item inizio stesura della relazione sull'attività di stage.
+\end{itemize}
+
+\subsection*{Ottava settimana} 
+\begin{itemize}
+	\item fine stesura della relazione sull'attività di stage;
+	\item preparazione della presentazione sull'attività di stage da fare in azienda.
+\end{itemize}
+
+
+\section{}

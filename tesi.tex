@@ -106,9 +106,6 @@
 
 \input{tesi-config}                     % file con le impostazioni personali
 
-\makeglossaries
-% \input{glossario.tex}
-
 \begin{document}
 %**************************************************************
 % Materiale iniziale
@@ -140,6 +137,7 @@
 % Materiale finale
 %**************************************************************
 \backmatter
-\printglossaries
+\printglossary[type=acronym,title={Acronimi}]
+\printglossary[type=main,title={Glossario}]
 \input{inizio-fine/bibliografia}
 \end{document}
