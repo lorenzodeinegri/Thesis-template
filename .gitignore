@@ -95,10 +95,10 @@ acs-*.bib
 
 # glossaries
 *.acn
-*.acr
+#*.acr
 *.glg
 *.glo
-*.gls
+#*.gls
 *.glsdefs
 
 # gnuplottex

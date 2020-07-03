@@ -24,7 +24,7 @@
                twoside,                 % impagina per fronte-retro
                openright,               % inizio capitoli a destra
                english,                 
-               italian,                 
+               italian          
                ]{book}    
 
 %**************************************************************
@@ -46,7 +46,7 @@
 
 \usepackage{caption}                    % didascalie
 
-\usepackage{chngpage,calc}              % centra il frontespizio
+\usepackage{chngpage, calc}             % centra il frontespizio
 
 \usepackage{csquotes}                   % gestisce automaticamente i caratteri (")
 
@@ -68,7 +68,7 @@
 
 \usepackage{microtype}                  % microtipografia
 
-\usepackage{mparhack,fixltx2e,relsize}  % finezze tipografiche
+\usepackage{mparhack, fixltx2e, relsize}% finezze tipografiche
 
 \usepackage{nameref}                    % visualizza nome dei riferimenti                                      
 
@@ -95,7 +95,7 @@
                                         % 3. eseguire: makeindex -s tesi.ist -t tesi.alg -o tesi.acr tesi.acn
                                         % 4. compilare due volte tesi.tex.
 
-\usepackage[backend=biber,style=verbose-ibid,hyperref,backref]{biblatex}
+\usepackage[backend=biber, style=verbose-ibid, hyperref, backref]{biblatex}
                                         % eccellente pacchetto per la bibliografia; 
                                         % produce uno stile di citazione autore-anno; 
                                         % lo stile "numeric-comp" produce riferimenti numerici
@@ -137,7 +137,7 @@
 % Materiale finale
 %**************************************************************
 \backmatter
-\printglossary[type=acronym,title={Acronimi}]
-\printglossary[type=main,title={Glossario}]
+\printglossary[type=acronym, title={Acronimi e abbreviazioni}]
+\printglossary[type=main, title={Glossario}]
 \input{inizio-fine/bibliografia}
 \end{document}
