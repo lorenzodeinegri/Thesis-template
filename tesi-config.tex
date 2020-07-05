@@ -48,20 +48,19 @@
 % Tutor aziendale
 \newcommand{\myTutor}{Andrea Bisello}
 
-
 %**************************************************************
 % Impostazioni di impaginazione
 % see: http://wwwcdf.pd.infn.it/AppuntiLinux/a2547.htm
 %**************************************************************
 
-\setlength{\parindent}{14pt}   % larghezza rientro della prima riga
-\setlength{\parskip}{0pt}   % distanza tra i paragrafi
-
+\setlength{\parindent}{14pt}   							% larghezza rientro della prima riga
+\setlength{\parskip}{0pt}   							% distanza tra i paragrafi
 
 %**************************************************************
 % Impostazioni di biblatex
 %**************************************************************
-\bibliography{bibliografia} % database di biblatex 
+
+\bibliography{bibliografia} 							% database di biblatex 
 
 \defbibheading{bibliography} {
     \cleardoublepage
@@ -70,7 +69,7 @@
     \chapter*{\bibname\markboth{\bibname}{\bibname}}
 }
 
-\setlength\bibitemsep{1.5\itemsep} % spazio tra entry
+\setlength\bibitemsep{1.5\itemsep}						% spazio tra entry
 
 \DeclareBibliographyCategory{opere}
 \DeclareBibliographyCategory{web}
@@ -84,10 +83,10 @@
 \defbibheading{opere}{\section*{Riferimenti bibliografici}}
 \defbibheading{web}{\section*{Siti Web consultati}}
 
-
 %**************************************************************
 % Impostazioni di caption
 %**************************************************************
+
 \captionsetup{
     tableposition=top,
     figureposition=bottom,
@@ -99,18 +98,20 @@
 %**************************************************************
 % Impostazioni di glossaries
 %**************************************************************
+
 \makeglossaries
-\input{glossario} % database di termini
+\input{glossario} 										% database di termini
 
 %**************************************************************
 % Impostazioni di graphicx
 %**************************************************************
-\graphicspath{{immagini/}} % cartella dove sono riposte le immagini
 
+\graphicspath{{immagini/}}								% cartella dove sono riposte le immagini
 
 %**************************************************************
 % Impostazioni di hyperref
 %**************************************************************
+
 \hypersetup{
     %hyperfootnotes=false,
     %pdfpagelabels,
@@ -137,7 +138,8 @@
     linkcolor=RoyalBlue,
     citecolor=webgreen,
     %pagecolor=RoyalBlue,
-    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
+    %urlcolor=Black, linkcolor=Black, citecolor=Black,
+    %pagecolor=Black,
     pdftitle={\myTitle},
     pdfauthor={\textcopyright\ \myName, \myUni, \myFaculty},
     pdfsubject={},
@@ -149,6 +151,7 @@
 %**************************************************************
 % Impostazioni di itemize
 %**************************************************************
+
 %\renewcommand{\labelitemi}{$\ast$}
 
 %\renewcommand{\labelitemi}{$\bullet$}
@@ -156,19 +159,19 @@
 %\renewcommand{\labelitemiii}{$\diamond$}
 %\renewcommand{\labelitemiv}{$\ast$}
 
-
 %**************************************************************
 % Impostazioni di listings
 %**************************************************************
+
 \lstset{
-    language=[LaTeX]Tex,%C++,
-    keywordstyle=\color{RoyalBlue}, %\bfseries,
+    language=[LaTeX]Tex,								%C++,
+    keywordstyle=\color{RoyalBlue}, 					%\bfseries,
     basicstyle=\small\ttfamily,
     %identifierstyle=\color{NavyBlue},
     commentstyle=\color{Green}\ttfamily,
     stringstyle=\rmfamily,
-    numbers=none, %left,%
-    numberstyle=\scriptsize, %\tiny
+    numbers=none, 										%left,
+    numberstyle=\scriptsize, 							%\tiny
     stepnumber=5,
     numbersep=8pt,
     showstringspaces=false,
@@ -177,19 +180,18 @@
     frame=single
 } 
 
-
 %**************************************************************
 % Impostazioni di xcolor
 %**************************************************************
+
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
-
 
 %**************************************************************
 % Altro
 %**************************************************************
 
-\newcommand{\omissis}{[\dots\negthinspace]} % produce [...]
+\newcommand{\omissis}{[\dots\negthinspace]} 			% produce [...]
 
 % eccezioni all'algoritmo di sillabazione
 \hyphenation
@@ -209,16 +211,17 @@
 %**************************************************************
 % Environment per ``rischi''
 %**************************************************************
-\newcounter{riskcounter}                % define a counter
-\setcounter{riskcounter}{0}             % set the counter to some initial value
+
+\newcounter{riskcounter}               					% define a counter
+\setcounter{riskcounter}{0}             				% set the counter to some initial value
 
 %%%% Parameters
 % #1: Title
 \newenvironment{risk}[1]{
-    \refstepcounter{riskcounter}        % increment counter
-    \par \noindent                      % start new paragraph
-    \textbf{\arabic{riskcounter}. #1}   % display the title before the 
-                                        % content of the environment is displayed 
+    \refstepcounter{riskcounter}        				% increment counter
+    \par \noindent                     	 				% start new paragraph
+    \textbf{\arabic{riskcounter}. #1}   				% display the title before the 
+                                        				% content of the environment is displayed 
 }{
     \par\medskip
 }
@@ -232,8 +235,9 @@
 %**************************************************************
 % Environment per ``use case''
 %**************************************************************
-\newcounter{usecasecounter}             % define a counter
-\setcounter{usecasecounter}{0}          % set the counter to some initial value
+
+\newcounter{usecasecounter}             				% define a counter
+\setcounter{usecasecounter}{0}          				% set the counter to some initial value
 
 %%%% Parameters
 % #1: ID
@@ -241,11 +245,11 @@
 \newenvironment{usecase}[2]{
     \renewcommand{\theusecasecounter}{\usecasename #1}  % this is where the display of 
                                                         % the counter is overwritten/modified
-    \refstepcounter{usecasecounter}             % increment counter
+    \refstepcounter{usecasecounter}             		% increment counter
     \vspace{10pt}
-    \par \noindent                              % start new paragraph
-    {\large \textbf{\usecasename #1: #2}}       % display the title before the 
-                                                % content of the environment is displayed 
+    \par \noindent                              		% start new paragraph
+    {\large \textbf{\usecasename #1: #2}}       		% display the title before the 
+                                               			% content of the environment is displayed 
     \medskip
 }{
     \medskip
@@ -265,7 +269,7 @@
 
 \newenvironment{namespacedesc}{
     \vspace{10pt}
-    \par \noindent                              % start new paragraph
+    \par \noindent                             			% start new paragraph
     \begin{description} 
 }{
     \end{description}
