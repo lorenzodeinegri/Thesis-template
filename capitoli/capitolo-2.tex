@@ -11,34 +11,29 @@
 
 \section{Progetto}
 
-\myCompany{} \companyTitle{} fornisce diversi strumenti per eliminare l'utilizzo di documenti cartacei all’interno delle aziende, in modo da agevolare e tracciare il trasferimento delle informazioni. Oltre a \myCompany{} \companyTitle, il progetto coinvolge anche la start-up Commerc.io che gestisce lo scambio di documenti siglati da firme elettroniche tramite una propria blockchain.
-\\
-Lo scopo del progetto di stage è la realizzazione di un applicativo che veda l'integrazione, tramite la blockchain sviluppata da Commerc.io, di identità digitali basate su self-sovereign identity e sulla notarizzazione di processi di condivisione e sottoscrizione, con firme elettroniche, dei documenti fiscali.
-\\
-Con self-sovereign identity si intende un meccanismo che permette agli individui di certificare la propria identità digitale, senza bisogno che un garante esterno lo faccia per loro.
-\\
-Tutto questo dovrà essere integrato all'interno dei processi di digital transformation di \myCompany{} \companyTitle.
-\\
-Lo studente dovrà, inizialmente, effettuare uno studio ed un'analisi dettagliata della documentazione del progetto Commerc.io nel contesto dei documenti fiscali, in modo da approfondire le tecnologie riguardanti la blockchain. Dovrà poi essere sviluppato un \textit{proof of concept}, che si servirà delle API appositamente implementate da Commerc.io per l'interazione con la loro rete \textit{commercio.network}.
-\\
-L'attività di sviluppo prevederà, oltre all'analisi iniziale, un periodo di progettazione, che dovrà essere opportunamente argomentata e documentata. Il prototipo finale, risultante dall'attività di codifica, dovrà permettere l'interazione con la blockchain di Commerc.io per il riconoscimento delle identità digitali e la creazione di transazioni per la trasmissione di documenti.
-\\
-Durante questo progetto di stage lo studente avrà occasione di approfondire le sue conoscenze nell'ambito delle blockchain, le tecnologie che le riguardano ed il loro utilizzo in situazioni reali.
-\\
-In particolare lo studio si concentrerà sulla:
+Lo stage riguardava uno dei temi più innovativi e allo stesso tempo più controversi dell'informatica: la \gls{blockchaing}.\\
+\myCompany{} \companyTitle{} è sempre alla ricerca di nuove tecnologie e strumenti che portino dell'innovazione ai propri prodotti e alle funzionalità che questi offrono, per questo motivo ripone grande fiducia ed aspettativa in questo progetto, atto a sperimentare l'utilizzo della \gls{blockchaing} per la gestione di documenti, firme e identità digitali.
+A tal fine l'azienda ha iniziato una collaborazione con la \textit{start-up} Commerc.io S.r.l. che sta sviluppando una propria \gls{blockchaing}, chiamata \textit{commercio.network}, che è progettata e strutturata appositamente per la gestione delle attività aziendali che \myCompany{} \companyTitle{} punta a digitalizzare.\\
+A partire da questa idea è stato quindi concepito il progetto di stage, il quale puntava alla realizzazione di un prototipo per dare prova della fattibilità dell'impiego della rete \textit{commercio.network} per la gestione delle transazioni documentali e per la creazione di identità digitali. Lo scopo era quindi realizzare un'applicazione, con funzione di \gls{poc}, che permettesse ad un utente di registrarsi e fruire di queste funzionalità.\\
+Considerando che le tecnologie \gls{blockchaing} non sono ancora largamente diffuse nella comunità informatica e che la letteratura a riguardo non è ancora del tutto matura, è stato deciso di suddividere il percorso di stage in due fasi distinte:
+
 \begin{itemize}
-	\item familiarizzazione col contesto aziendale di fatturazione elettronica;
-	\item comprensione del funzionamento di una blockchain;
-	\item integrazione di identità digitali tramite self-sovereign identity, sfruttando la blockchain;
-	\item applicazione della blockchain per garantire l'integrità di documenti condivisi;
-	\item applicazione della blockchain per implementare un servizio di decentralized identifier (DID).
+	\item studio e formazione sul contesto aziendale e sul tema \gls{blockchaing};
+	\item sviluppo di un'applicazione, con funzione di \gls{poc}, che implementi le funzionalità d'interesse per l'azienda.
 \end{itemize}
+
+Durante il primo periodo era richiesto uno studio del settore aziendale, atto a comprendere quali funzionalità e quali prodotti sono offerti da \myCompany{} \companyTitle{} e come questi vengono usufruiti da parte dei clienti, in modo da capire quale sarebbe stato il modo migliore per strutturare l'applicazione e per renderla coerente con quelle già esistenti. Successivamente era necessario svolgere un'attività di ricerca e approfondimento circa la \gls{blockchaing}, e tutte le tecnologie e gli strumenti ad essa correlati, per poterne comprenderne il funzionamento e le caratteristiche e quindi effettuare un confronto tra pregi e difetti per capire se il suo impiego all'interno del progetto potesse portare valore aggiunto o meno. Una volta acquisito una certo grado di competenza riguardo la \gls{blockchaing}, il passo successivo prevedeva di applicare quanto appreso per analizzare la struttura della \textit{commercio.network} e capirne le funzionalità, in che modo accedervi e come utilizzarle all'interno di un programma. Infine, per poter scegliere il linguaggio di programmazione più adatto e di conseguenza il tipo di applicazione da realizzare, era necessario studiare adeguatamente la documentazione delle \gls{api} disponibili per interagire con la \gls{blockchaing}, così da poter avere un'idea più chiara delle operazioni implementabili con il prototipo.\\
+Una volta terminato il periodo di formazione teorica, nella seconda parte dello stage, era richiesto lo sviluppo di un \gls{poc} che implementasse le principali funzionalità di interesse per il progetto aziendale, in modo da dimostrarne la fattibilità. Inizialmente era doveroso svolgere un'analisi dettagliata dei casi d'uso e dei requisiti di interesse per l'azienda, in modo da poter effettuare una selezione di quelli effettivamente utili da trattare all'interno dell'applicazione. Successivamente era necessario effettuare la progettazione, sia della logica applicativa e di \textit{business} che dell'interfaccia grafica, di ogni funzionalità di cui era prevista l'implementazione, per poi passare alla codifica vera e propria.\\
+Il \gls{poc} finale ottenuto doveva quindi permettere l'interazione con la \gls{blockchaing} di Commerc.io S.r.l. per la gestione di identità digitali e lo scambio di documenti.
 
 
 \section{Obiettivi}
 
+L'obiettivo primario dello stage era la realizzazione di un \gls{poc} che permettesse di dimostrare il possibile inserimento e utilizzo di una \gls{blockchaing} all'interno dei sistemi applicativi sviluppati da \myCompany{} \companyTitle.\\
+Durante la stesura del piano di lavoro con il tutor \myTutor sono stati individuati ulteriori requisiti, utili a suddividere efficacemente i compiti da svolgere durante il periodo di stage. Questi sono stati classificati in modo differente, in base alla loro importanza a fini del progetto.
+
 \subsection*{Classificazione}
-Si farà riferimento ai requisiti secondo la seguente classificazione, la quale permette di identificarli univocamente:
+I requisiti individuati sono stati riferiti secondo la seguente classificazione, la quale permette di identificarli univocamente:
 \begin{itemize}
 	\item \textbf{RO-X:} requisiti obbligatori, vincolanti in quanto obiettivo primario richiesto dall'azienda proponente;
 	\item \textbf{RD-X:} requisiti desiderabili, non vincolanti o strettamente necessari, ma dal riconoscibile valore aggiunto;
@@ -48,98 +43,120 @@ Si farà riferimento ai requisiti secondo la seguente classificazione, la quale 
 Nelle sigle precedentemente indicate, \textbf{X} è un numero intero progressivo maggiore di zero con funzione di identificativo del requisito.
 
 \subsection*{Definizione}
-Si prevede lo raggiungimento dei seguenti obiettivi.
+Di seguito sono indicati, secondo la classificazione esposta in precedenza, tutti i requisiti che sono stati previsti per il progetto di stage.
 
 \subsubsection*{Obbligatori}
 \begin{itemize}
-	\item \textbf{RO-1:} acquisizione delle competenze sulle tematiche relative alla blockchain e alle tecnologie associate;
-	\item \textbf{RO-2:} implementazione di un \textit{proof of concept} che permetta l'interazione con la blockchain di Commerc.io per il riconoscimento delle identità digitali e la trasmissione di documenti, tramite un'interfaccia grafica basilare;
+	\item \textbf{RO-1:} acquisizione delle competenze sulle tematiche relative alla \gls{blockchaing} e alle tecnologie associate;
+	\item \textbf{RO-2:} implementazione di un \gls{poc} che permetta l'interazione con la \gls{blockchaing} di Commerc.io per il riconoscimento delle identità digitali e la trasmissione di documenti, tramite un'interfaccia grafica basilare;
 	\item \textbf{RO-3:} stesura della documentazione relativa ai risultati ottenuti nel corso delle varie fasi del progetto e alla gestione delle difficoltà incontrate;
 	\item \textbf{RO-4:} stesura della relazione riguardante il lavoro svolto durante tutto il periodo di stage.
 \end{itemize}
 
 \subsubsection*{Desiderabili}
+
+Inizialmente era stato individuato come obiettivo desiderabile l'implementazione di un'interfaccia \textit{web} completa per il \gls{poc}, tuttavia, in seguito ad una discussione approfondita con il tutor aziendale e altri dipendenti interessati dal progetto, è stato deciso di prevedere tale obiettivo come facoltativo e di sostituirlo con il seguente:
+
 \begin{itemize}
-	\item \textbf{RD-1:} implementazione di un'interfaccia web completa per il \textit{proof of concept}.
+	\item \textbf{RD-1:} sviluppo di un'applicazione \textit{mobile} in \textit{Flutter} che offra le funzionalità richieste per il \gls{poc}.
 \end{itemize}
 
 \subsubsection*{Facoltativi}
+
+Inizialmente era stato individuato come obiettivo facoltativo lo sviluppo di un'applicazione \textit{mobile} in \textit{Flutter} che offrisse le funzionalità richieste per il \gls{poc}, tuttavia, in seguito ad una discussione approfondita con il tutor aziendale e altri dipendenti interessati dal progetto, è stato deciso di prevedere tale obiettivo come desiderabile e di sostituirlo con il seguente:
+
 \begin{itemize}
-	\item \textbf{RF-1:} sviluppo di un'applicazione mobile in Flutter che offra le funzionalità richieste per il \textit{proof of concept}.
+	\item \textbf{RF-1:} implementazione di un'interfaccia \textit{web} completa per il \gls{poc}.
 \end{itemize} 
 
 
 \section{Prodotti}
 
-Lo studente al termine del periodo si stage dovrà fornire i seguenti prodotti all'azienda proponente \myCompany{} \companyTitle.
-\subsubsection*{Obbligatori}
+Al termine dello stage era richiesta la consegna del \gls{poc} che dimostrasse il possibile inserimento e utilizzo di una \gls{blockchaing} all'interno dei sistemi applicativi sviluppati da \myCompany{} \companyTitle, oppure, se questa idea si fosse rivelata non praticabile, una relazione dettagliata delle motivazioni che hanno portato a tale esito.\\
+In seguito all'individuazione di tutti i requisiti del progetto all'interno del piano di lavoro, è stato necessario prevedere la realizzazione di ulteriori prodotti da consegnare poi all'azienda. Questi sono stati classificati, allo stesso modo dei requisiti da cui provengono, in base alla loro importanza a fini del progetto di stage.
+
+\subsection*{Obbligatori}
 \begin{itemize}
-	\item il \textit{proof of concept} che mostri il funzionamento della gestione delle identità digitali e del trasferimento di documenti tramite \textit{blockchain}, che faccia uso delle API sviluppate da Commerc.io e offra una semplice interfaccia per il suo utilizzo;
+	\item il \gls{poc} che mostri il funzionamento della gestione delle identità digitali e del trasferimento di documenti tramite \gls{blockchaing}, che faccia uso delle \gls{api} sviluppate da Commerc.io S.r.l. e offra una semplice interfaccia per il suo utilizzo;
 	\item la documentazione dettagliata dei risultati ottenuti, comprendente un'analisi critica delle difficoltà riscontrate e delle soluzioni adottate;
 	\item una relazione che illustri le attività svolte e i prodotti realizzati;
 	\item una presentazione finale del lavoro svolto, da esporre in azienda.
 \end{itemize}
 
-\subsubsection*{Desiderabili}
+\subsection*{Desiderabili}
+
+Inizialmente era stato individuato come prodotto desiderabile un'interfaccia \textit{web} completa che permettesse l'utilizzo del \gls{poc}, tuttavia, in seguito alla modifica degli obiettivi di progetto, è stato deciso di prevedere tale prodotto come facoltativo e di sostituirlo con il seguente:
+
 \begin{itemize}
-	\item un'interfaccia web completa che permetta l'utilizzo del \textit{proof of concept}.
+	\item un'applicazione \textit{mobile} scritta in \textit{Flutter} che offra le funzionalità richieste dal progetto.
 \end{itemize}
 
-\subsubsection*{Facoltativi}
+\subsection*{Facoltativi}
+
+Inizialmente era stato individuato come prodotto facoltativo un'applicazione \textit{mobile} scritta in \textit{Flutter} che offrisse le funzionalità richieste dal progetto, tuttavia, in seguito alla modifica degli obiettivi dello stage, è stato deciso di prevedere tale prodotto come desiderabile e di sostituirlo con il seguente:
+
 \begin{itemize}
-	\item un'applicazione mobile scritta in Flutter che offra le funzionalità richieste dal progetto.
+	\item un'interfaccia \textit{web} completa che permetta l'utilizzo del \gls{poc}.
 \end{itemize} 
 
 
 \section{Pianificazione}
 
-Le attività di progetto saranno scandite dalla seguente pianificazione, per un totale di 300 ore.
+Lo stage è stato effettuato principalmente in modalità remota tramite \textit{smart working}, ad eccezione di qualche giornata lavorativa svolta per interno all'interno della sede aziendale su esplicita richiesta del tutor. Tali giornate erano spesso occasione di verifica del lavoro svolto, pianificazione dei compiti da portare a termine nelle settimane successive e confronto attivo per la risoluzione di problematiche riscontrate e/o dubbi sorti durante le attività di ricerca e sviluppo.\\
+L'orario di lavoro è sempre stato dalle 09:00 alle 13:00 e poi dalle 14:00 alle 18:00, sia in azienda che a casa; al termine era fissato un incontro, di persona oppure telematico tramite \textit{Microsoft Teams} o \textit{Skype}, con il tutor per fare un riepilogo delle attività svolte durante la giornata e confrontarsi su eventuali criticità rilevate.\\
+La pianificazione dell'intero progetto di stage è stata effettuata su base settimanale, per un totale di 300 ore di lavoro, ed è stata scandita come riportato nella seguente tabella:
 
-\begin{tabularx}{\textwidth}{|c|c|c|p{7.85cm}|}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{|c|c|c|p{5cm}|}
 	\hline
-	\textbf{Settimana} & \textbf{Date} & \textbf{Ore di lavoro} & \textbf{Descrizione dell'attività} \\\hline
-	I & 06/05/2020 - 08/05/2020 & 20 & Studio dei concetti fondamentali legati alla blockchain e del contesto aziendale. \\\hline
-	II & 11/05/2020 - 15/05/2020 & 40 & Studio approfondito della blockchain di Commerc.io e delle funzionalità da implementare. \\\hline
-	III & 18/05/2020 - 22/05/2020 & 40 & Implementazione e verifica delle funzionalità offerte ad un account registrato. \\\hline
+	\textbf{Settimana} & \textbf{Date} & \textbf{Ore} & \textbf{Descrizione dell'attività} \\\hline
+	I & 06/05/2020 - 08/05/2020 & 20 & Studio dei concetti fondamentali legati alla \gls{blockchaing} e del contesto aziendale. \\\hline
+	II & 11/05/2020 - 15/05/2020 & 40 & Studio approfondito della \gls{blockchaing} di Commerc.io S.r.l. e delle funzionalità da implementare. \\\hline
+	III & 18/05/2020 - 22/05/2020 & 40 & Implementazione e verifica delle funzionalità offerte ad un \textit{account} registrato. \\\hline
 	IV & 25/05/2020 - 29/05/2020 & 40 & Implementazione e verifica delle funzionalità di gestione dell'identità digitale. \\\hline
 	V & 01/06/2020 - 05/06/2020 & 40 & Implementazione e verifica delle funzionalità di condivisione di documenti. \\\hline
-	VI & 08/06/2020 - 12/06/2020 & 40 & Implementazione dell'interfaccia grafica e validazione del prototipo. \\\hline
+	VI & 08/06/2020 - 12/06/2020 & 40 & Implementazione dell'interfaccia grafica e verifica del prototipo. \\\hline
 	VII & 15/06/2020 - 19/06/2020 & 40 & Stesura della documentazione ed inizio della relazione. \\\hline
 	VIII & 22/06/2020 - 26/06/2020 & 40 & Termine stesura della relazione e presentazione di quanto svolto in azienda. \\\hline
 \end{tabularx}
+\caption{Tabella della pianificazione dello stage}
+\label{tab:pianificazione}
+\end{table}
+
+Oltre alla precedente pianificazione di progetto, è stata fatta anche una pianificazione di dettaglio; questa punta ad specificare, per ciascuna di settimana, le attività da svolgere in relazione agli obiettivi da raggiungere individuati.
 
 \subsection*{Prima settimana}
 \begin{itemize}
-	\item studio dei concetti fondamentali legati alla blockchain;
+	\item studio dei concetti fondamentali legati alla \gls{blockchaing};
 	\item formazione riguardo il contesto aziendale della fatturazione elettronica;
-	\item studio della documentazione della blockchain sviluppata da Commerc.io.
+	\item studio della documentazione della \gls{blockchaing} sviluppata da Commerc.io S.r.l..
 \end{itemize}
 
 \subsection*{Seconda settimana} 
 \begin{itemize}
-	\item studio della funzione di un account riferito alla blockchain di Commerc.io, con particolare attenzione al concetto di wallet;
+	\item studio della funzione di un account riferito alla \gls{blockchaing} di Commerc.io S.r.l., con particolare attenzione al concetto di \gls{walletg}\glsfirstoccur;
 	\item studio della creazione e del mantenimento di un'identità digitale all'interno della blockchain e delle sue possibili interazioni con essa;
-	\item studio delle API sviluppate da Commerc.io per la gestione dei documenti tramite la blockchain.
+	\item studio delle \gls{api} sviluppate da Commerc.io S.r.l. per la gestione dei documenti tramite la \gls{blockchaing}.
 \end{itemize}
 
 \subsection*{Terza settimana}
 \begin{itemize}
-	\item implementazione delle seguenti funzionalità, relative ad un account nella blockchain di Commerc.io:
+	\item implementazione delle seguenti funzionalità, relative ad un \textit{account} nella \gls{blockchaing} di Commerc.io S.r.l.:
 	\begin{itemize}
 		\item generazione ed importazione di un HD Wallet;
-		\item richiesta, ricezione ed invio di Token tra diversi account, all'interno della blockchain;
-		\item controllo del bilancio di uno specifico account;
-		\item acquisizione e perdita dello stato di Validator per i Token utilizzati nella blockchain;
+		\item richiesta, ricezione ed invio di \gls{tokeng}\glsfirstoccur{} tra diversi account, all'interno della \gls{blockchaing};
+		\item controllo del bilancio di uno specifico \textit{account};
+		\item acquisizione e perdita dello stato di \gls{nodo-validatoreg}\glsfirstoccur{} per i \gls{tokeng} utilizzati nella \gls{blockchaing};
 	\end{itemize}
 	\item verifica delle funzionalità implementate.
 \end{itemize}
 
 \subsection*{Quarta settimana} 
 \begin{itemize}
-	\item implementazione delle seguenti funzionalità, relative alla gestione dell'identità digitale nella blockchain di Commerc.io:
+	\item implementazione delle seguenti funzionalità, relative alla gestione dell'identità digitale nella \gls{blockchaing} di Commerc.io S.r.l.:
 	\begin{itemize}
-		\item utilizzo e gestione di DID (Decentralized Identifier);
-		\item funzioni legate ad un DID: creazione di un DDO (DID Document), richiesta di deposito e richiesta di power up;
+		\item utilizzo e gestione di \gls{did}\glsfirstoccur;
+		\item funzioni legate ad un \gls{did}: creazione di un \gls{ddo}\glsfirstoccur, richiesta di deposito e richiesta di \gls{power-upg}\glsfirstoccur;
 		\item gestione degli inviti ad una connessione;
 		\item gestione delle credenziali verificabili;
 	\end{itemize}
@@ -148,7 +165,7 @@ Le attività di progetto saranno scandite dalla seguente pianificazione, per un 
 
 \subsection*{Quinta settimana} 
 \begin{itemize}
-	\item implementazione delle seguenti funzionalità, relative alla gestione e allo scambio di documenti nella blockchain di Commerc.io:
+	\item implementazione delle seguenti funzionalità, relative alla gestione e allo scambio di documenti nella \gls{blockchaing} di Commerc.io S.r.l.:
 	\begin{itemize}
 		\item condivisione di un documento;
 		\item invio di una ricevuta;
@@ -160,7 +177,7 @@ Le attività di progetto saranno scandite dalla seguente pianificazione, per un 
 \subsection*{Sesta settimana} 
 \begin{itemize}
 	\item implementazione dell'interfaccia grafica per la fruizione, da parte degli utenti, delle funzionalità implementate;
-	\item validazione del \textit{proof of concept} e verifica dell'integrazione con l'interfaccia.
+	\item validazione del \gls{poc} e verifica dell'integrazione con l'interfaccia.
 \end{itemize}
 
 \subsection*{Settima settimana} 
@@ -176,4 +193,17 @@ Le attività di progetto saranno scandite dalla seguente pianificazione, per un 
 \end{itemize}
 
 
-\section{}
+\section{Motivazioni personali}
+
+Fin da quando sono venuto a conoscenza della presenza di un'attività di stage curriculare all'interno del mio corso di studi, ho ritenuto che fosse opportuno sfruttarla per fare un'esperienza lavorativa all'interno di un'azienda. Quindi ho partecipato all'evento StageIT, oltre che per conoscere e farmi conoscere da diverse imprese, per cercare una proposta di stage aziendale che rispecchiasse le seguenti caratteristiche:
+
+\begin{itemize}
+	\item inerenza a tematiche interessanti e innovative, possibilmente non affrontate nel corso di studi né triennale né magistrale;
+	\item arricchimento dal punto di vista delle conoscenze e delle competenze personali;
+	\item opportunità di collaborazione e/o assunzione futura in azienda;
+	\item possibilità di svolgimento dello percorso stage in tempi utili al sostenimento dell'appello di laurea di luglio (a causa della pandemia molte imprese non prevedevano di iniziare prima di giugno o luglio).
+\end{itemize}
+
+Scegliere il progetto offerto da \myCompany{} \companyTitle{} mi ha permesso di soddisfare tutti gli obiettivi che mi ero posto inizialmente. Infatti, fin dal primo colloquio con il responsabile degli stage in azienda mi è stata garantita la possibilità di iniziare il tirocinio dai primi giorni di maggio, prevedendo una modalità lavorativa da remoto, in \textit{smart working}; inoltre mi era stato anticipato che, in caso di valutazione positiva del lavoro svolto, ci sarebbe stato interesse, da parte dell'azienda, di rimanere in contatto per offrire un'opportunità occupazionale compatibile con il 
+proseguo del percorso di studi.\\
+Tuttavia, la motivazione principale della mia scelta risiede nella tematica su cui si basa il progetto di stage: la \gls{blockchaing}. Al momento, questo argomento non viene trattato in nessun corso della laurea in informatica e si tratta di una tecnologia relativamente nuova e non del tutto matura, di conseguenza ho trovato molto stimolante l'idea di poterla affrontare in autonomia da un punto di vista sia teorico che pratico, e sotto la guida e le indicazione di un tutor aziendale.
