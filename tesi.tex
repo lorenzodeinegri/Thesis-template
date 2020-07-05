@@ -7,7 +7,6 @@
         %%                                          %%
         %%******************************************%%
 
-
 % I seguenti commenti speciali impostano:
 % 1. 
 % 2. PDFLaTeX come motore di composizione;
@@ -109,9 +108,11 @@
 \input{tesi-config}                     % file con le impostazioni personali
 
 \begin{document}
+	
 %**************************************************************
 % Materiale iniziale
 %**************************************************************
+
 \frontmatter
 \input{inizio-fine/frontespizio}
 \input{inizio-fine/colophon}
@@ -124,6 +125,7 @@
 %**************************************************************
 % Materiale principale
 %**************************************************************
+
 \mainmatter
 \input{capitoli/capitolo-1}             % Introduzione
 \input{capitoli/capitolo-2}             % Stage
@@ -138,6 +140,7 @@
 %**************************************************************
 % Materiale finale
 %**************************************************************
+
 \backmatter
 \printglossary[type=acronym, title={Acronimi e abbreviazioni}]
 \printglossary[type=main, title={Glossario}]
