@@ -10,7 +10,7 @@
 \section{Tecnologie}
 \subsection*{Commercio.network}
 
-Commercio.network\footcite{site:commercio-network} è
+\textit{Commercio.network}\footcite{site:commercio-network} è
 
 \subsection*{Macchina virtuale}
 
@@ -33,16 +33,18 @@ Flutter\footcite{site:flutter} è
 \subsection*{VirtualBox}
 
 VirtualBox\footcite{site:virtual-box} è un \textit{software} \gls{open-sourceg} sviluppato da Oracle che fornisce le funzionalità di creazione, controllo ed esecuzione di macchine virtuali ospiti all'interno del sistema operativo del proprio dispositivo fisico. Permette di caricare più sistemi ospiti su un singolo sistema ospitante, ognuno di questi può essere gestito indipendentemente dagli altri, all'interno della propria macchina virtuale. Inoltre, sistema ospitato e sistema ospitante possono comunicare tra di loro sia tramite memoria condivisa che tramite schede di rete virtuali. Infine, supporta sia la virtualizzazione basata su \textit{software} che quella basata su \textit{hardware}, cercando sempre di prediligere quest'ultima alla prima.\\
-Nel progetto di stage è stato utilizzato per gestire la macchina virtuale necessaria per l'installazione e l'esecuzione di un nodo della Commercio.network.
+Nel progetto di stage è stato utilizzato per gestire la macchina virtuale necessaria per l'installazione e l'esecuzione di un nodo della \textit{Commercio.network}.
 
 \subsection*{Ubuntu}
 
-Ubuntu\footcite{site:ubuntu} è un sistema operativo \gls{open-sourceg} basato su Debian, una distribuzione di Linux. Si tratta di un sistema semplice da installare, tramite una procedura guidata, e da utilizzare, attraverso un'intuitiva interfaccia grafica; tuttavia offre molti strumenti utili agli sviluppatori \textit{software}, come gestori di pacchetti, compilatori e ambienti di sviluppo. Inoltre, fa uso di molte tecniche di sicurezza informatica per prevenire il più possibile attacchi sia dall'esterno che dall'interno del sistema. A tal fine prevede una sofisticata gestione dei permessi degli utenti, un controllo totale della connessione e del traffico in rete, e dei compilatori che fanno utilizzo di meccanismi di protezione della memoria. \\
-È stato scelto per essere installato all'interno della macchina virtuale utilizzata nel progetto di stage in quanto, tra i sistemi operativi supportati dal \textit{software} che implementa un nodo della rete Commercio.network, era quello più adatto ad essere contenuto all'interno dei un ambiente virtuale, sia per la leggerezza in termini di sfruttamento delle risorse, che per la grande capacità di personalizzazione e adattamento.
+Ubuntu\footcite{site:ubuntu} è un sistema operativo \gls{open-sourceg} basato su \textit{Debian}, una distribuzione di \textit{Linux}. Si tratta di un sistema semplice da installare, tramite una procedura guidata, e da utilizzare, attraverso un'intuitiva interfaccia grafica; tuttavia offre molti strumenti utili agli sviluppatori \textit{software}, come gestori di pacchetti, compilatori e ambienti di sviluppo. Inoltre, fa uso di molte tecniche di sicurezza informatica per prevenire il più possibile attacchi sia dall'esterno che dall'interno del sistema. A tal fine prevede una sofisticata gestione dei permessi degli utenti, un controllo totale della connessione e del traffico in rete, e dei compilatori che fanno utilizzo di meccanismi di protezione della memoria. \\
+È stato scelto per essere installato all'interno della macchina virtuale utilizzata nel progetto di stage in quanto, tra i sistemi operativi supportati dal \textit{software} che implementa un nodo della rete \textit{Commercio.network}, era quello più adatto ad essere contenuto all'interno dei un ambiente virtuale, sia per la leggerezza in termini di sfruttamento delle risorse, che per la grande capacità di personalizzazione e adattamento.
 
 \subsection*{Cnd}
 
-Cnd è
+Cnd è un demone \textit{software}, ossia un programma che, una volta lanciato, resta in esecuzione in \textit{background} senza fornire nessuna possibilità di interazione attiva all'utente. Solitamente questi \textit{software} vengono utilizzati come servizi del sistema operativo e vengono avviati automaticamente durante l'accensione del sistema stesso.\\
+Cnd è il \textit{software} sviluppato da Commerc.io S.r.l. per l'implementazione di un nodo della rete \textit{Commercio.network}, è possibile installarlo facilmente seguendo la procedura presente nella documentazione ufficiale\footcite{manual:docs-commercio-network} e, una volta avviato, gestire automaticamente tutte le operazioni necessarie per il corretto funzionamento del nodo e per la corretta interazione con la \gls{blockchaing} in modo da eseguire le operazioni richieste. Oltre a questo, implementa anche un \textit{web server} \gls{rest}\glsfirstoccur{} interrogabile sia dal sistema operativo dove viene eseguito che da dispositivi esterni collegati in rete con esso; è quindi possibile servirsi di questo per operare sulla rete \textit{Commercio.network}.\\
+Nel progetto di stage è stato installato all'interno della macchina virtuale \textit{Linux} per poter poi sfruttarlo per utilizzare la \gls{blockchaing} per la realizzazione delle funzionalità previste per il \gls{poc}. 
 
 \subsection*{Cncli}
 
