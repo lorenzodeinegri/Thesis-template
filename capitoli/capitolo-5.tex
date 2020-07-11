@@ -8,82 +8,209 @@
 
 %**************************************************************
 \section{Analisi}
-\subsection{Casi d'uso}
 
-Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
-I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
-Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
+\subsection{Descrizione}
 
-\begin{figure}[H] 
-	\centering 
-	\includegraphics[width=0.9\columnwidth]{usecase/scenario-principale} 
-	\caption{Use Case - UC0: Scenario principale}
-\end{figure}
+Durante la prima parte dello stage, svolgendo le attività di studio e formazione personale sul contesto aziendale e sulla \gls{blockchaing} sviluppata da Commerc.io S.r.l., sono stati individuati i temi di principale interesse per \myCompany{} \companyTitle:
 
-\begin{usecase}{0}{Scenario principale}
-	\usecaseactors{Sviluppatore applicativi}
-	\usecasepre{Lo sviluppatore è entrato nel plug-in di simulazione all'interno dell'IDE}
-	\usecasedesc{La finestra di simulazione mette a disposizione i comandi per configurare, registrare o eseguire un test}
-	\usecasepost{Il sistema è pronto per permettere una nuova interazione}
-	\label{uc:scenario-principale}
-\end{usecase}
+\begin{itemize}
+	\item la gestione delle identità digitali e delle informazioni che le caratterizzano;
+	\item lo scambio di documenti con valore legale associati ad un'identità tramite la relativa firma elettronica.
+\end{itemize}
+
+Di conseguenza, l'obiettivo principale della seconda fase del progetto è stato realizzare un prototipo che dimostrasse la fattibilità dell'implementazione di un'applicazione per dispositivi mobili inerente alle due precedenti tematiche. Questa doveva permettere agli utenti di registrare una propria \gls{ssi} e, una volta completata l'apposita procedura, di utilizzarla per certificare la paternità degli eventuali documenti caricati e poi condivisi con altri utenti, tramite il programma stesso.\\
+L'applicazione dovrà essere disponibile sia per dispositivi Android che per dispositivi iOS, mantenendo un'interfaccia grafica il più coerente e simile possibile, indipendentemente dal sistema operativo su cui veniva eseguita, e fornendo le stesse funzionalità. In particolare, ogni utente dovrà poter:
+
+\begin{itemize}
+	\item registrare una nuova identità, la quale sarà poi accessibile ed utilizzabile solamente all'interno del sistema attualmente utilizzato;
+	\item recuperare un'identità precedentemente creata in un dispositivo differente da quello corrente;
+	\item accedere alla propria identità in modo sicuro;
+	\item utilizzare l'identità all'interno dell'applicazione per effettuare le diverse operazioni messe a disposizione.
+\end{itemize}
+
+Le prime tre funzionalità richiederanno l'esecuzione di alcune operazioni che, poste in una sequenza ordinata, andranno a formare una procedura che dovrà essere seguita passo passo per poter raggiungerne lo scopo.\\\\
+Per registrare una nuova identità sarà necessario inserire il proprio nome e cognome e scegliere il metodo di autenticazione desiderato tra quelli disponibili, ossia \textit{password} alfanumerica o dati biometrici; nel caso venga fatta la prima scelta verrà richiesto l'inserimento, con successiva conferma, della \textit{password} desiderata, altrimenti sarà necessario autenticarsi con l'impronta digitale o con l'identificativo facciale prima di poter proseguire. Successivamente verrà chiesto di inserire il proprio indirizzo di posta elettronica e, una volta confermato, un codice di verifica numerico inviato all'utente tramite \textit{email} per certificare l'effettiva proprietà della casella indicata. La stessa operazione dovrà essere poi ripetuta per l'inserimento del numero di telefono cellulare, in questo caso la verifica verrà effettuata tramite \gls{sms}\glsfirstoccur. Infine verrà generato e visualizzato a schermo il codice mnemonico usato per generare il \gls{walletg} associato alla \gls{ssi} appena creata, e sarà possibile salvarlo in formato \gls{pdf}\glsfirstoccur{} all'interno della memoria del dispositivo, oppure stamparlo direttamente dall'applicazione. È di vitale importanza far capire all'utente che non deve smarrire questo codice, in quanto è l'unica informazione utilizzabile per ripristinare l'accesso alla propria identità.\\\\
+Per poter recuperare una vecchia identità ed accedervi con un nuovo dispositivo, diverso da quello utilizzato per crearla la prima volta, verrà prima richiesto il metodo di autenticazione desiderato, allo stesso modo della procedura di registrazione e, dopo aver fornito i dati necessari, dovrà essere inserito il codice mnemonico generato durante la creazione della \gls{ssi}. Solo nel caso questo sia corretto l'utente potrà accedere alla propria identità, altrimenti la procedura terminerà con un'errore e, per poter utilizzare l'applicazione, sarà quindi indispensabile ripetere nuovamente il procedimento di registrazione dall'inizio.\\\\
+Per effettuare l'accesso, invece, non sarà necessario inserire il codice mnemonico, ma sarà sufficiente fornire i dati di autenticazione richiesti in base al metodo scelto in precedenza. Se era stato selezionato il riconoscimento biometrico, allora l'utente dovrà utilizzare la propria impronta digitale o il riconoscimento facciale per entrare, altrimenti verrà richiesto l'inserimento della \textit{password} alfanumerica scelta dall'utente durante la registrazione.\\\\
+Una volta all'interno dell'applicazione, le funzionalità che saranno a disposizione dell'utente sono:
+
+\begin{itemize}
+	\item visualizzazione della foto e delle informazioni associate alla propria identità, corredate dall'indirizzo pubblico e dal bilancio del \gls{walletg} ad essa associato;
+	\item visualizzazione della foto, del nome e delle informazioni associate ad ogni documento inserito all'interno dell'applicazione;
+	\item visualizzazione del codice QR associato all'indirizzo pubblico del proprio \gls{walletg};
+	\item inserimento di una nuova foto profilo, la quale può essere scattata direttamente all'interno dell'applicazione;
+	\item inserimento di un nuovo documento.
+\end{itemize}
 
 \subsection{Requisiti}
 
-Da un'attenta analisi dei requisiti e degli use case effettuata sul progetto è stata stilata la tabella che traccia i requisiti in rapporto agli use case.\\
-Sono stati individuati diversi tipi di requisiti e si è quindi fatto utilizzo di un codice identificativo per distinguerli.\\
-Il codice dei requisiti è così strutturato R(F/Q/V)(N/D/O) dove:
+L'obiettivo principale che si desidera raggiungere è l'implementazione di un \gls{poc} che dimostri la fattibilità dell'applicazione d'interesse per l'azienda, di conseguenza il progetto non prevede uno sviluppo \textit{software} completo, ma limitato a rendere disponibili le operazioni più significative. Quindi, dopo un'attenta analisi del problema proposto e delle funzionalità richieste per l'applicazione, tenendo anche conto del tempo rimasto a disposizione per il progetto di stage, sono stati individuati diversi tipi di requisiti, in base all'importanza e alla quantità di lavoro richiesta per riuscire a soddisfarli.\\
+Per identificare ogni requisito in modo univoco si è fatto utilizzo di un opportuno codice, il quale è strutturato nel modo seguente:\\
 
-\begin{enumerate}
-	\item[R =] requisito
-	\item[F =] funzionale
-	\item[Q =] qualitativo
-	\item[V =] di vincolo
-	\item[N =] obbligatorio (necessario)
-	\item[D =] desiderabile
-	\item[Z =] opzionale
-\end{enumerate}
+\begin{center}
+	\textbf{R[T][P]-[N]}
+\end{center}
 
-Nelle tabelle \ref{tab:requisiti-funzionali}, \ref{tab:requisiti-qualitativi} e \ref{tab:requisiti-vincolo} sono riassunti i requisiti e il loro tracciamento con gli use case delineati in fase di analisi.
+Dove ogni lettera ha un preciso significato:
 
-\begin{table}[H]%
-	\caption{Tabella del tracciamento dei requisti funzionali}
+\begin{itemize}
+	\item \textbf{R:} requisito;
+	
+	\item \textbf{T:} tipologia, differisce in base allo specifico requisito e può assumere i seguenti valori:
+		\begin{itemize}
+			\item \textbf{F:} funzionale, ossia un requisito che indica una caratteristica operativa che il \textit{software} deve avere;
+			\item \textbf{Q:} qualitativo, ossia un requisito che indica una caratteristica, non necessariamente legata al \textit{software}, ma che ne aumenta la qualità in termini di efficacia ed efficienza;
+			\item \textbf{V:} vincolo, ossia un requisito che indica una caratteristica, non necessariamente legata al \textit{software}, ma che deve essere garantita su richiesta dell'azienda;
+		\end{itemize}
+	
+	\item \textbf{P:} priorità, differisce in base allo specifico requisito e può assumere i seguenti valori:
+		\begin{itemize}
+			\item \textbf{O:} obbligatorio, ossia un requisito vincolante in quanto primario e fondamentale;
+			\item \textbf{D:} desiderabile, ossia un requisito non vincolante o strettamente necessario, ma dal riconoscibile valore aggiunto;
+			\item \textbf{F:} funzionale, ossia un requisito rappresentante valore aggiunto non strettamente competitivo; 
+		\end{itemize}
+	
+	\item \textbf{N:} numero, intero progressivo maggiore di zero con funzione di identificativo del requisito.
+\end{itemize}
+
+Di seguito vengono riportati tutti i requisiti riguardanti lo sviluppo del \gls{poc}, suddivisi in tre tabelle, una per ogni tipologia.
+
+\rowcolors{1}{grayer}{white}
+\begin{longtable}{|c|p{10.5cm}|}
+	\hline
+	\rowcolor{gray}
+	\textbf{Requisito} & \textbf{Descrizione} \\
+	\hline
+	RFO-1     & L'applicazione deve permettere l'inserimento del nome dell'utente. \\
+	\hline
+	RFO-2     & L'applicazione deve permettere l'inserimento del cognome dell'utente. \\
+	\hline
+	RFO-3     & L'applicazione deve permettere l'inserimento dell'indirizzo di posta elettronica dell'utente. \\
+	\hline
+	RFO-4     & L'applicazione deve permettere l'inserimento del numero di telefono cellulare dell'utente. \\
+	\hline
+	RFO-5     & L'applicazione deve permettere l'inserimento del codice di verifica dell'indirizzo di posta elettronica dell'utente. \\
+	\hline
+	RFO-6     & L'applicazione deve permettere l'inserimento del codice di verifica del numero di telefono cellulare dell'utente. \\
+	\hline
+	RFO-7     & L'applicazione deve permettere l'invio del codice di verifica dell'indirizzo di posta elettronica dell'utente. \\
+	\hline
+	RFO-8     & L'applicazione deve permettere l'invio del codice di verifica del numero di telefono cellulare dell'utente. \\
+	\hline
+	RFO-9     & L'applicazione deve permettere la visualizzazione del codice mnemonico. \\
+	\hline
+	RFO-10    & L'applicazione deve permettere l'inserimento del codice mnemonico. \\
+	\hline
+	RFO-11    & L'applicazione deve permettere l'inserimento di una \textit{password} per l'accesso da parte dell'utente. \\
+	\hline
+	RFO-12    & L'applicazione deve permettere l'inserimento della \textit{password} di accesso dell'utente. \\
+	\hline
+	RFO-13    & L'applicazione deve permettere la scelta dell'accesso tramite \textit{password} da parte dell'utente. \\
+	\hline
+	RFO-14    & L'applicazione deve permettere l'inserimento della password per l'accesso da parte dell'utente. \\
+	\hline
+	RFO-15    & L'applicazione deve permettere la visualizzazione del nome dell'utente. \\
+	\hline
+	RFO-16    & L'applicazione deve permettere la visualizzazione del cognome dell'utente. \\
+	\hline
+	RFO-17    & L'applicazione deve permettere la visualizzazione dell'indirizzo di posta elettronica dell'utente. \\
+	\hline
+	RFO-18    & L'applicazione deve permettere la visualizzazione del numero di telefono cellulare dell'utente. \\
+	\hline
+	RFO-19    & L'applicazione deve permettere la visualizzazione dell'indirizzo pubblico del \gls{walletg} dell'utente. \\
+	\hline
+	RFO-20    & L'applicazione deve permettere la visualizzazione del saldo del \gls{walletg} dell'utente. \\
+	\hline
+	RFO-21    & L'applicazione deve permettere la visualizzazione della foto profilo dell'utente. \\
+	\hline
+	RFO-22    & L'applicazione deve permettere la visualizzazione della lista dei documenti inseriti dall'utente. \\
+	\hline
+	RFO-23    & L'applicazione deve permettere la registrazione di una nuova identità da parte dell'utente. \\
+	\hline
+	RFO-24    & L'applicazione deve permettere il recupero di un'identità creata in precedenza da parte dell'utente. \\
+	\hline
+	RFO-25    & L'applicazione deve permettere l'accesso tramite autenticazione da parte dell'utente. \\
+	\hline
+	RFD-1     & L'applicazione deve permettere il reinvio del codice di verifica dell'indirizzo di posta elettronica dell'utente. \\
+	\hline
+	RFD-2     & L'applicazione deve permettere il reinvio del codice di verifica del numero di telefono cellulare dell'utente. \\
+	\hline
+	RFD-3     & L'applicazione deve permettere il salvataggio del codice mnemonico in formato \gls{pdf}. \\
+	\hline
+	RFD-4     & L'applicazione deve permettere la scelta dell'accesso tramite dati biometrici da parte dell'utente. \\
+	\hline
+	RFD-5     & L'applicazione deve permettere l'inserimento dei dati biometrici per l'accesso da parte dell'utente. \\
+	\hline
+	RFD-6     & L'applicazione deve permettere l'inserimento della foto profilo da parte dell'utente. \\
+	\hline
+	RFD-7     & L'applicazione deve permettere l'inserimento del titolo di un documento da parte dell'utente. \\
+	\hline
+	RFD-8     & L'applicazione deve permettere l'inserimento delle informazioni di un documento da parte dell'utente. \\
+	\hline
+	RFD-9     & L'applicazione deve permettere l'inserimento di un documento da parte dell'utente. \\
+	\hline
+	RFF-1     & L'applicazione deve permettere la stampa del codice mnemonico. \\
+	\hline
+	RFF-2     & L'applicazione deve permettere la visualizzazione del codice QR associato all'indirizzo pubblico del \gls{walletg}. \\
+	\hline
+	RFF-3     & L'applicazione deve permettere la modifica della foto profilo da parte dell'utente. \\
+	\hline
+	RFF-4     & L'applicazione deve permettere l'inserimento della foto di un documento da parte dell'utente. \\
+	\hline
+	
+	\caption{Tabella dei requisti funzionali}
 	\label{tab:requisiti-funzionali}
-	\begin{tabularx}{\textwidth}{lXl}
-		\hline\hline
-		\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-		\hline
-		RFN-1     & L'interfaccia permette di configurare il tipo di sonde del test & UC1 \\
-		\hline
-	\end{tabularx}
-\end{table}%
+\end{longtable}
 
-\begin{table}[H]%
-	\caption{Tabella del tracciamento dei requisiti qualitativi}
+\rowcolors{1}{white}{grayer}
+\begin{longtable}{|c|p{10.5cm}|}
+	\hline
+	\rowcolor{gray}
+	\textbf{Requisito} & \textbf{Descrizione} \\
+	\hline
+	RQO-1    & Deve essere fornita una documentazione delle procedure di installazione e configurazione di tutte le tecnologie e gli strumenti utilizzati per sviluppare e testare l'applicazione. \\
+	\hline
+	RQO-2    & Deve essere fornita una documentazione di tutte le classi che compongono l'applicazione, con i relativi metodi. \\
+	\hline
+	RQO-3    & Il processo di sviluppo deve fare uso di un sistema di versionamento. \\
+	\hline
+	
+	\caption{Tabella dei requisiti qualitativi}
 	\label{tab:requisiti-qualitativi}
-	\begin{tabularx}{\textwidth}{lXl}
-		\hline\hline
-		\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-		\hline
-		RQD-1    & Le prestazioni del simulatore hardware deve garantire la giusta esecuzione dei test e non la generazione di falsi negativi & - \\
-		\hline
-	\end{tabularx}
-\end{table}%
+\end{longtable}
 
-\begin{table}[H]%
-	\caption{Tabella del tracciamento dei requisiti di vincolo}
+\rowcolors{1}{white}{grayer}
+\begin{longtable}{|c|p{10.5cm}|}
+	\hline
+	\rowcolor{gray}
+	\textbf{Requisito} & \textbf{Descrizione} \\
+	\hline
+	RVO-1    & L'applicazione deve essere scritta utilizzando il linguaggio Dart. \\
+	\hline
+	RVO-2    & L'applicazione deve essere scritta utilizzando il \gls{frameworkg} Flutter. \\
+	\hline
+	RVO-3    & L'applicazione deve interagire con la \gls{blockchaing} della \textit{Commercio.network}. \\
+	\hline
+	RVO-4    & L'interazione a basso livello con la \gls{blockchaing} deve avvenire tramite la libreria Sacco, sviluppata da Commerc.io S.r.l. per il linguaggio di programmazione Dart. \\
+	\hline
+	RVO-5    & L'interazione ad alto livello con la \gls{blockchaing} deve avvenire tramite la libreria CommercioSDK, sviluppata da Commerc.io S.r.l. per il linguaggio di programmazione Dart. \\
+	\hline
+	RVO-6    & L'applicazione deve essere eseguibile su sistema operativo Android. \\
+	\hline
+	RVD-1    & L'applicazione deve essere eseguibile su sistema operativo iOS. \\
+	\hline
+	
+	\caption{Tabella dei requisiti di vincolo}
 	\label{tab:requisiti-vincolo}
-	\begin{tabularx}{\textwidth}{lXl}
-		\hline\hline
-		\textbf{Requisito} & \textbf{Descrizione} & \textbf{Use Case}\\
-		\hline
-		RVO-1    & La libreria per l'esecuzione dei test automatici deve essere riutilizzabile & - \\
-		\hline
-	\end{tabularx}
-\end{table}%
+\end{longtable}
+	
 
 %**************************************************************
 \section{Progettazione}
+
+Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.\\
+I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.\\
+Essendo il progetto finalizzato alla creazione di un tool per l'automazione di un processo, le interazioni da parte dell'utilizzatore devono essere ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.
 
 \subsection*{Namespace 1}
 Descrizione namespace 1.
