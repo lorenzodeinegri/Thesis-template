@@ -357,5 +357,150 @@ In questo \gls{namespaceg} sono raggruppate tutte le classi utilizzate per la re
 %**************************************************************
 \section{Codifica}
 
+Tutta l'applicazione, compresa l'interfaccia grafica, è stata sviluppata utilizzando il linguaggio di programmazione Dart, tramite il quale sono state implementate tutte le classi previste durante la progettazione. Questo è stato possibile grazie alle funzionalità del \gls{frameworkg} Flutter, il quale mette a disposizione degli sviluppatori delle classi che realizzano ciascuna un componente grafico con una funzione specifica. Quindi, per creare le schermate dell'applicazione è stato sufficiente realizzare una singola classe per ognuna di esse, estendendo un'apposita superclasse comune a tutte le classi fornite da Flutter; all'interno dei metodi di costruzione e renderizzazione derivati sono stati poi composti tra di loro tutti gli opportuni oggetti, istanziandone uno dentro l'altro e valorizzandone i vari attributi utili a formare il \textit{layout} desiderato.\\
+Per l'implementazione di alcune funzionalità e/o di alcuni componenti grafici specifici sono stati utilizzati dei pacchetti esterni che rispondessero a tali esigenze, questi sono stati aggiunti come dipendenze del progetto tramite un apposito \textit{file} di configurazione fornito dal \gls{frameworkg}. Infatti, Flutter mette a disposizione un meccanismo che si occupa di gestire l'importazione e l'aggiornamento di tutte le estensioni utilizzate dal progetto tramite dei semplici comandi eseguibili attraverso un terminale.\\ 
+Alcuni di questi pacchetti sono stati utilizzati anche nell'implementazione delle classi che realizzano la logica applicativa, in particolare sono state necessarie le librerie sviluppare da Commerc.io S.r.l. per permettere l'interazione con la \gls{blockchaing}. Ogni classe di interesse fornita è stata opportunamente incapsulata all'interno di un'altra classe realizzata \textit{ad hoc} per estenderne e raffinarne le funzionalità.
+
 %**************************************************************
-\section{Possibili evoluzioni}
+\section{Test}
+
+Data la natura di \gls{poc} dell'applicazione, \myCompany{} \companyTitle{} non ha ritenuto fosse di suo interesse la realizzazione di specifici test automatici che ne garantissero la corretta esecuzione. L'azienda ha richiesto solamente una dimostrazione pratica del funzionamento di tutte le funzionalità più significative implementate, in quanto l'obiettivo principale era dimostrare la fattibilità del progetto aziendale con il quale punta a gestire, sia le \gls{ssi} che i documenti firmati, in modo completo, tramite un'unica applicazione utilizzabile in ogni tipologia di sistema.\\
+Di conseguenza, durante tutto lo sviluppo, di ogni nuova funzionalità implementata ne veniva provato manualmente il funzionamento prima di procedere con quella successiva. Poi, man mano che veniva realizzata l'interfaccia grafica, testandone il comportamento venivano anche riprovate tutte le funzioni della logica applicativa coinvolte nelle operazioni svolte. Infine, al termine dello sviluppo, assieme al tutor aziendale, è stato fatto un test generale che comprendesse ogni singola funzionalità esposta dall'interfaccia.
+
+%**************************************************************
+\section{Valutazioni}
+
+Il risultato ottenuto al termine dello sviluppo dell'applicazione è stato valutato molto positivamente da parte dell'azienda, in quanto il \textit{software} funziona correttamente, ha il comportamento atteso e sono state realizzate tutte le funzionalità di interesse per il progetto aziendale. Inoltre, grazie alla bontà dei risultati delle attività di analisi e progettazione, è stato possibile rendere disponibili ulteriori operazioni di importanza secondaria, il che ha permesso di ottenere un prodotto che va oltre le aspettative iniziali di \myCompany{} \companyTitle{}.\\
+Infatti, il lavoro svolto ha portato al soddisfacimento di tutti i requisiti obbligatori e facoltativi; tra quelli desiderabili, gli unici rimasti incompiuti sono quelli riguardanti l'inserimento di un documento all'interno dell'applicazione. Tuttavia la funzionalità non risulta essere assente, ma soltanto incompleta: sono stati implementati e testati tutti i relativi metodi della logica applicativa però, per motivi di tempo, non è stato possibile realizzare l'interfaccia grafica delle schermate che ne avrebbero permesso l'utilizzo da parte degli utenti.\\
+Di seguito viene riportato lo stato di tutti i requisiti al termine dello sviluppo del \gls{poc}, suddivisi in tre tabelle, una per ogni tipologia.
+
+\rowcolors{1}{grayer}{white}
+\begin{longtable}{|c|p{7.65cm}|c|}
+	\hline
+	\rowcolor{gray}
+	\textbf{Requisito} & \textbf{Descrizione} & \textbf{Stato} \\
+	\hline
+	RFO-1     & L'applicazione deve permettere l'inserimento del nome dell'utente. & Soddisfatto \\
+	\hline
+	RFO-2     & L'applicazione deve permettere l'inserimento del cognome dell'utente. & Soddisfatto \\
+	\hline
+	RFO-3     & L'applicazione deve permettere l'inserimento dell'indirizzo di posta elettronica dell'utente. & Soddisfatto \\
+	\hline
+	RFO-4     & L'applicazione deve permettere l'inserimento del numero di telefono cellulare dell'utente. & Soddisfatto \\
+	\hline
+	RFO-5     & L'applicazione deve permettere l'inserimento del codice di verifica dell'indirizzo di posta elettronica dell'utente. & Soddisfatto \\
+	\hline
+	RFO-6     & L'applicazione deve permettere l'inserimento del codice di verifica del numero di telefono cellulare dell'utente. & Soddisfatto \\
+	\hline
+	RFO-7     & L'applicazione deve permettere l'invio del codice di verifica dell'indirizzo di posta elettronica dell'utente. & Soddisfatto \\
+	\hline
+	RFO-8     & L'applicazione deve permettere l'invio del codice di verifica del numero di telefono cellulare dell'utente. & Soddisfatto \\
+	\hline
+	RFO-9     & L'applicazione deve permettere la visualizzazione del codice mnemonico. & Soddisfatto \\
+	\hline
+	RFO-10    & L'applicazione deve permettere l'inserimento del codice mnemonico. & Soddisfatto \\
+	\hline
+	RFO-11    & L'applicazione deve permettere l'inserimento di una \textit{password} per l'accesso da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFO-12    & L'applicazione deve permettere l'inserimento della \textit{password} di accesso dell'utente. & Soddisfatto \\
+	\hline
+	RFO-13    & L'applicazione deve permettere la scelta dell'accesso tramite \textit{password} da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFO-14    & L'applicazione deve permettere l'inserimento della password per l'accesso da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFO-15    & L'applicazione deve permettere la visualizzazione del nome dell'utente. & Soddisfatto \\
+	\hline
+	RFO-16    & L'applicazione deve permettere la visualizzazione del cognome dell'utente. & Soddisfatto \\
+	\hline
+	RFO-17    & L'applicazione deve permettere la visualizzazione dell'indirizzo di posta elettronica dell'utente. & Soddisfatto \\
+	\hline
+	RFO-18    & L'applicazione deve permettere la visualizzazione del numero di telefono cellulare dell'utente. & Soddisfatto \\
+	\hline
+	RFO-19    & L'applicazione deve permettere la visualizzazione dell'indirizzo pubblico del \gls{walletg} dell'utente. & Soddisfatto \\
+	\hline
+	RFO-20    & L'applicazione deve permettere la visualizzazione del saldo del \gls{walletg} dell'utente. & Soddisfatto \\
+	\hline
+	RFO-21    & L'applicazione deve permettere la visualizzazione della foto profilo dell'utente. & Soddisfatto \\
+	\hline
+	RFO-22    & L'applicazione deve permettere la visualizzazione della lista dei documenti inseriti dall'utente. & Soddisfatto \\
+	\hline
+	RFO-23    & L'applicazione deve permettere la registrazione di una nuova identità da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFO-24    & L'applicazione deve permettere il recupero di un'identità creata in precedenza da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFO-25    & L'applicazione deve permettere l'accesso tramite autenticazione da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFD-1     & L'applicazione deve permettere il reinvio del codice di verifica dell'indirizzo di posta elettronica dell'utente. & Soddisfatto \\
+	\hline
+	RFD-2     & L'applicazione deve permettere il reinvio del codice di verifica del numero di telefono cellulare dell'utente. & Soddisfatto \\
+	\hline
+	RFD-3     & L'applicazione deve permettere il salvataggio del codice mnemonico in formato \gls{pdf}. & Soddisfatto \\
+	\hline
+	RFD-4     & L'applicazione deve permettere la scelta dell'accesso tramite dati biometrici da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFD-5     & L'applicazione deve permettere l'inserimento dei dati biometrici per l'accesso da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFD-6     & L'applicazione deve permettere l'inserimento della foto profilo da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFD-7     & L'applicazione deve permettere l'inserimento del titolo di un documento da parte dell'utente. & Non soddisfatto \\
+	\hline
+	RFD-8     & L'applicazione deve permettere l'inserimento delle informazioni di un documento da parte dell'utente. & Non soddisfatto \\
+	\hline
+	RFD-9     & L'applicazione deve permettere l'inserimento di un documento da parte dell'utente. & Non soddisfatto \\
+	\hline
+	RFF-1     & L'applicazione deve permettere la stampa del codice mnemonico. & Soddisfatto \\
+	\hline
+	RFF-2     & L'applicazione deve permettere la visualizzazione del codice QR associato all'indirizzo pubblico del \gls{walletg}. & Soddisfatto \\
+	\hline
+	RFF-3     & L'applicazione deve permettere la modifica della foto profilo da parte dell'utente. & Soddisfatto \\
+	\hline
+	RFF-4     & L'applicazione deve permettere l'inserimento della foto di un documento da parte dell'utente. & Soddisfatto \\
+	\hline
+	
+	\caption{Tabella dello stato dei requisti funzionali}
+	\label{tab:stato-requisiti-funzionali}
+\end{longtable}
+
+\rowcolors{1}{white}{grayer}
+\begin{longtable}{|c|p{8.35cm}|c|}
+	\hline
+	\rowcolor{gray}
+	\textbf{Requisito} & \textbf{Descrizione} & \textbf{Stato} \\
+	\hline
+	RQO-1    & Deve essere fornita una documentazione delle procedure di installazione e configurazione di tutte le tecnologie e gli strumenti utilizzati per sviluppare e testare l'applicazione. & Soddisfatto \\
+	\hline
+	RQO-2    & Deve essere fornita una documentazione di tutte le classi che compongono l'applicazione, con i relativi metodi. & Soddisfatto \\
+	\hline
+	RQO-3    & Il processo di sviluppo deve fare uso di un sistema di versionamento. & Soddisfatto \\
+	\hline
+	
+	\caption{Tabella dello stato dei requisiti qualitativi}
+	\label{tab:stato-requisiti-qualitativi}
+\end{longtable}
+
+\rowcolors{1}{white}{grayer}
+\begin{longtable}{|c|p{8.35cm}|c|}
+	\hline
+	\rowcolor{gray}
+	\textbf{Requisito} & \textbf{Descrizione} & \textbf{Stato} \\
+	\hline
+	RVO-1    & L'applicazione deve essere scritta utilizzando il linguaggio Dart. & Soddisfatto \\
+	\hline
+	RVO-2    & L'applicazione deve essere scritta utilizzando il \gls{frameworkg} Flutter. & Soddisfatto \\
+	\hline
+	RVO-3    & L'applicazione deve interagire con la \gls{blockchaing} della \textit{Commercio.network}. & Soddisfatto \\
+	\hline
+	RVO-4    & L'interazione a basso livello con la \gls{blockchaing} deve avvenire tramite la libreria Sacco, sviluppata da Commerc.io S.r.l. per il linguaggio di programmazione Dart. & Soddisfatto \\
+	\hline
+	RVO-5    & L'interazione ad alto livello con la \gls{blockchaing} deve avvenire tramite la libreria CommercioSDK, sviluppata da Commerc.io S.r.l. per il linguaggio di programmazione Dart. & Soddisfatto \\
+	\hline
+	RVO-6    & L'applicazione deve essere eseguibile su sistema operativo Android. & Soddisfatto \\
+	\hline
+	RVD-1    & L'applicazione deve essere eseguibile su sistema operativo iOS. & Soddisfatto \\
+	\hline
+	
+	\caption{Tabella dello stato dei requisiti di vincolo}
+	\label{tab:stato-requisiti-vincolo}
+\end{longtable}
+
+L'applicazione, per quanto sia soltanto un \gls{poc} e quindi lontano dall'essere compiuta, può essere una base valida su cui l'azienda potrà costruire il \textit{software} completo che intende sviluppare. Infatti è stata progettata per essere facilmente estendibile sia in ampiezza, aggiungendo nuove funzionalità, che in profondità, raffinando quelle già esistenti. 
