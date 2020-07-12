@@ -212,15 +212,23 @@ Per la progettazione delle classi utilizzate nel prodotto sono stati creati degl
 I diagrammi delle classi sono diagrammi di tipo \gls{uml}\glsfirstoccur{} dedicati alla rappresentazione dei campi dati e dei metodi offerti da ogni classe del sistema. Tuttavia, lo scopo principale è mostrare le relazioni di dipendenza che sussistono tra le classi stesse, in modo da fornire un'idea delle interazioni presenti all'interno del sistema.\\
 Essendo il progetto finalizzato alla creazione di un'applicazione per dispositivi mobili, la maggior parte delle classi previste servono per l'implementazione dell'interfaccia grafica, in quanto ognuna di esse realizza una singola schermata. Di conseguenza, le uniche classi che presentano interazioni non banali, e quindi utili da rappresentare, sono quelle che implementano la logica applicativa. Viene quindi riportato solamente il diagramma delle classi presenti nel \gls{namespaceg}\glsfirstoccur{} denominato \textit{model} che contiene tutte le funzionalità inerenti alla logica di \textit{business}.
 
+\subsection{Logica applicativa}
+
+La logica applicativa comprende tutte le funzionalità necessarie per la comunicazione tra l'interfaccia grafica e le strutture dati sottostanti, consentendo sia il corretto flusso di dati tra le due parti, che l'elaborazione dei dati stessi in base allo scopo della specifica operazione eseguita dell'applicazione.\\
+All'interno del \gls{poc}, la logica applicativa avrà il compito di ricevere dall'interfaccia grafica i comandi che impartisce l'utente che la sta utilizzando e di eseguire, in risposta, le operazioni corrispondenti sulla \gls{blockchaing}, dandone poi prova tangibile a schermo. Quindi sarà responsabile dell'implementazione di tutte le funzionalità offerte dall'applicazione tramite la \gls{blockchaing}.\\
+Per fare ciò sfrutterà la \gls{sdk}\footcite{manual:sdk-commercio-network} sviluppata da Commerc.io S.r.l., la quale fornisce tutte le classi e tutti i metodi di base necessari per realizzare operazioni più complesse e utili per degli scopi applicativi. In particolare verranno utilizzati i seguenti moduli:
+
+\begin{itemize}
+	\item \textbf{Commercio \textit{Account}:} fornisce una classe Wallet che comprende le funzionalità di creazione e recupero di un \gls{walletg} tramite l'apposito codice mnemonico, inoltre dispone di apposti metodi per la gestione sicura e il salvataggio del codice stesso. Oltre a questo, incapsula le funzionalità di richiesta e di invio di \gls{tokeng} a \gls{walletg} di altri utenti sulla \gls{blockchaing} e permette anche di controllare il proprio bilancio attuale. 
+	\item \textbf{Commercio \textit{ID}:} fornisce una classe IdHelper che comprende le funzionalità per creare, gestire ed utilizzare un \gls{did} e tutti i relativi \gls{ddo} ad esso associati. Inoltre dispone di appositi metodi per effettuare delle richieste di \gls{power-upg} nei confronti di altri \gls{did} paritari.
+	\item \textbf{Commercio \textit{Docs}:} fornisce una classe DocsHelper che comprende le funzionalità per condividere dei documenti con altri utenti e per inviare una conferma di avvenuta ricezione di un documento recapitato tramite la \gls{blockchaing}. Inoltre dispone di appositi metodi per reperire la lista di tutti i documenti condivisi e ricevuti, e di tutte le conferme di avvenuta ricezione inviate e recepite.
+\end{itemize} 
+
 \begin{figure}[!h] 
 	\centering 
 	\includegraphics[width=1.04\columnwidth]{model-classes-diagram} 
 	\caption{Diagramma delle classi del \gls{namespaceg} \textit{model}}
 \end{figure}
-
-\subsection{Logica applicativa}
-
-Descrizione logica applicativa.
 
 \begin{namespacedesc}
     \classdesc{Database}{la classe Database incapsula un'istanza della classe sqflite.Database per l'interazione con un \textit{database} SQLite. Al suo interno sono implementati i metodi per l'inizializzazione della tabella contenente il metodo di autenticazione scelto dall'utente, con l'eventuale \textit{password}, per l'aggiunta di un nuovo metodo di autenticazione, per il controllo della presenza di uno specifico metodo e per il reperimento di tale metodo.}
@@ -238,19 +246,90 @@ Descrizione logica applicativa.
 
 \subsection{Interfaccia grafica}
 
-Descrizione interfaccia grafica.
+L'interfaccia grafica comprende tutte le funzionalità necessarie per collegare le azioni compiute dall'utente alla logica applicativa, consentendo sia il corretto flusso di dati tra le due che l'elaborazione dei dati stessi in base allo scopo dell'operazione eseguita dell'applicazione, ma anche la visualizzazione dell'esito dell'operazione da parte dell'utente.\\
+All'interno del \gls{poc}, l'interfaccia grafica avrà il compito di presentare all'utente che la sta utilizzando tutte le funzionalità rese disponibili dall'applicazione, in modo semplice ed efficace, utilizzando solamente i componenti strettamente necessari, così da assicurare la massima comprensibilità e facilità d'utilizzo. Quindi sarà responsabile dell'implementazione di tutto il \textit{layout} grafico dell'applicazione.\\
+Per fare ciò sfrutterà il \gls{frameworkg} Flutter, il quale fornisce tutte le classi e tutti i metodi di base necessari per realizzare componenti grafici più complessi e utili per degli scopi applicativi. In particolare verranno sviluppate le seguenti sezioni principali:
+
+\begin{itemize}
+	\item \textbf{\textit{Home}:} comprende tutte le schermate che espongono le funzionalità fornire dall'applicazione all'utente che la utilizza.
+	\item \textbf{\textit{Login}:} comprende tutte le schermate che espongono le funzionalità necessarie all'utente per accedere all'interno dell'applicazione.
+	\item \textbf{\textit{Recover}:} comprende tutte le schermate che espongono le funzionalità necessarie all'utente per recuperare l'accesso ad un'identità precedentemente create utilizzando un diverso dispositivo mobile, in modo da poterla usare nuovamente all'interno dell'applicazione.
+	\item \textbf{\textit{Registration}:} comprende tutte le schermate che espongono le funzionalità necessarie all'utente per registrare una nuova identità digitale da utilizzare all'interno dell'applicazione per effettuare le operazioni messe a sua disposizione.
+\end{itemize}
 
 \begin{namespacedesc}
 	\classdesc{App}{la classe App implementa un componente grafico senza mantenimento di stato che incapsula un oggetto di classe MaterialApp, questo a sua volta contiene un'istanza del componente grafico che implementa la schermata attualmente visualizzata sullo schermo del dispositivo durante l'esecuzione dell'applicazione.\\
 	Oltre a ciò, implementa un metodo per l'istanziazione del componente grafico corretto sulla base della rotta specificata durante la navigazione che effettua l'utente utilizzando l'applicazione. A questo scopo definisce anche le costanti che rappresentano le singole rotte di ogni componente grafico che implementa una schermata dell'applicazione, queste sono accessibili da ogni altra classe per permettere ad ognuna di esse di implementare dei propri metodi per la navigazione tra pagine adiacenti.}
-	
-	\classdesc{Authentication}{la classe Authentication implementa un componente grafico con mantenimento di stato con due pulsanti per scegliere la modalità di accesso durante il recupero dell'identità precedentemente creata su un altro dispositivo. I pulsanti permettono la scelta tra una \textit{password} alfanumerica e i sensori biometrici del dispositivo. Se viene scelta la seconda opzione il componente grafico mostra la richiesta di sistema attraverso la quale viene chiesto all'utente di autenticarsi e solamente dopo aver superato il controllo biometrico l'utente può proseguire. Se invece viene scelta la \textit{password} allora viene istanziato e mostrato un componente grafico di classe login.Password.}
-	
+
+	\classdesc{Header}{la classe Header implementa un componente grafico senza mantenimento di stato con un titolo parametrico e un'icona. Viene istanziato da ogni componente grafico che implementa una schermata dell'applicazione, il quale lo utilizza per standardizzare l'intestazione dell'applicazione stessa.}
+\end{namespacedesc}
+
+\subsubsection*{Home}
+
+In questo \gls{namespaceg} sono raggruppate tutte le classi utilizzate per la realizzazione delle schermate che espongono le funzionalità fornite dall'applicazione una volta effettuata la registrazione ed eseguito l'accesso da parte dell'utente.
+
+\begin{namespacedesc}
 	\classdesc{Contact}{la classe Contact implementa un componente grafico con mantenimento di stato con un'icona/immagine di profilo dell'utente che rappresenta, questa è affiancata dal suo nome e cognome, indirizzo email e numero di telefono, inoltre sono anche riportati l'indirizzo pubblico e il saldo del \gls{walletg} dell'utente rappresentato. Per il reperimento di queste informazioni utilizza un'istanza della classe ContactState che contiene al suo interno un'istanza della classe Wallet che sfrutta per recuperare le informazioni dell'utente possessore.\\
 	Inoltre permette di modificare l'immagine di profilo, contenuta tramite lo scatto di una foto con la fotocamera del dispositivo, ogni qual volta l'utente fa un \textit{tap} su di essa.}
-	
+
 	\classdesc{Document}{la classe Document implementa un componente grafico senza mantenimento di stato con un'icona/immagine del documento che rappresenta, affiancata dal nome del documento stesso e dalla lista delle informazioni di interesse in esso contenute, sotto forma di coppie chiave-valore. Viene istanziato dalla classe Home per fornire la rappresentazione grafica dei documenti inseriti dall'utente utilizzatore dell'applicazione.}
 	
+	\classdesc{Home}{la classe Home implementa un componente grafico con mantenimento di stato con un componente grafico della classe Contact, un pulsante per la generazione del codice QR dell'indirizzo pubblico del \gls{walletg} dell'utente, un pulsante per l'inserimento di un nuovo documento e tanti componente grafico della classe Document quanti sono i documenti inseriti dall'utente. Per il reperimento di queste informazioni utilizza un'istanza della classe HomeState che contiene al suo interno un'istanza della classe Wallet che sfrutta per recuperare le informazioni dell'utente possessore.}
+	
+	\classdesc{Qr}{la classe Qr implementa un componente grafico senza mantenimento di stato con un componente grafico della classe QrImage per la visualizzazione del codice QR associato all'indirizzo pubblico del \gls{walletg} dell'utente e un pulsante per tornare indietro alla schermata Home.}
+\end{namespacedesc}
+
+\newpage
+
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[height=\textheight]{home} 
+	\caption{\textit{Layout} della classe Home}
+\end{figure}
+
+\subsubsection*{Login}
+
+In questo \gls{namespaceg} sono raggruppate tutte le classi utilizzate per la realizzazione delle schermate che permettono all'utente di effettuare l'accesso all'applicazione.
+
+\begin{namespacedesc}
+	\classdesc{Login}{la classe Login implementa un componente grafico senza mantenimento di stato con due pulsanti per scegliere se proseguire con il recupero di un'identità digitale precedentemente creata su un dispositivo differente oppure se crearne una nuova. Nel caso fosse già stata creata un'identità sul dispositivo corrente il componente grafico chiederà automaticamente all'utente di autenticarsi: se questi ha scelto l'autenticazione biometrica apparirà la richiesta di sistema e, se il controllo viene superato, viene istanziato e mostrato un componente grafico di classe Home, se invece l'utente ha scelto l'autenticazione tramite \textit{password} allora viene istanziato e mostrato un componente grafico di classe PasswordAuthentication.}
+	
+	\classdesc{PasswordAuthentication}{la classe PasswordAuthentication implementa un componente grafico con mantenimento di stato con un campo di testo per l'inserimento della \textit{password} utilizzata per accedere all'applicazione da parte di un utente registrato; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per verificare che la \textit{password} inserita sia la stessa memorizzata nel \textit{database} locale per l'utente di quel dispositivo, nel caso questo controllo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, ossia la schermata di classe Home, altrimenti viene semplicemente mostrato un errore a schermo.}
+\end{namespacedesc}
+
+\newpage
+
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[height=\textheight]{login} 
+	\caption{\textit{Layout} della classe Login}
+\end{figure}
+
+\subsubsection*{Recover}
+
+In questo \gls{namespaceg} sono raggruppate tutte le classi utilizzate per la realizzazione delle schermate che permettono all'utente di seguire la procedura di recupero di un'identità digitale creata con un dispositivo mobile diverso da quello corrente.
+
+\begin{namespacedesc}
+	\classdesc{Authentication}{la classe Authentication implementa un componente grafico con mantenimento di stato con due pulsanti per scegliere la modalità di accesso durante il recupero dell'identità precedentemente creata su un altro dispositivo. I pulsanti permettono la scelta tra una \textit{password} alfanumerica e i sensori biometrici del dispositivo. Se viene scelta la seconda opzione il componente grafico mostra la richiesta di sistema attraverso la quale viene chiesto all'utente di autenticarsi e solamente dopo aver superato il controllo biometrico l'utente può proseguire. Se invece viene scelta la \textit{password} allora viene istanziato e mostrato un componente grafico di classe recover.Password.}
+	
+	\classdesc{recover.Password}{la classe recover.Password implementa un componente grafico con mantenimento di stato con due campi di testo per l'inserimento della \textit{password} da utilizzare, durante il recupero dell'identità precedentemente creata su un altro dispositivo, per accedere all'applicazione all'avvio successivo; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per validare la \textit{password} inserita, nel caso questo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, altrimenti viene semplicemente mostrato un errore a schermo.}
+	
+	\classdesc{recover.Seed}{la classe recover.Seed implementa un componente grafico con mantenimento di stato con una casella di testo per consentire all'utente l'inserimento del codice mnemonico, utile per poter recuperare l'identità creata su un dispositivo differente da quello attualmente utilizzato; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per validare il codice mnemonico inserito, nel caso questo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, ossia la schermata di classe Home, altrimenti viene semplicemente mostrato un errore a schermo.}
+\end{namespacedesc}
+
+\newpage
+
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[height=\textheight]{login-seed} 
+	\caption{\textit{Layout} della classe recover.Seed}
+\end{figure}
+
+\subsubsection*{Registration}
+
+In questo \gls{namespaceg} sono raggruppate tutte le classi utilizzate per la realizzazione delle schermate che permettono all'utente di seguire la procedura di registrazione di una nuova identità digitale da utilizzare poi all'interno dell'applicazione.
+
+\begin{namespacedesc}
 	\classdesc{Email}{la classe Email implementa un componente grafico con mantenimento di stato con due campi di testo per l'inserimento della \textit{email} dell'utente che sta registrando una nuova identità digitale; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per validare l'\textit{email} inserita, nel caso questo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, altrimenti viene semplicemente mostrato un errore a schermo.}
 	
 	\classdesc{EmailConfirm}{la classe EmailConfirm implementa un componente grafico con mantenimento di stato con una casella di testo in cui inserire il codice di verifica inviato per \textit{email} all'indirizzo inserito in precedenza, in modo da garantire che sia di proprietà dell'utente che sta registrando la propria identità tramite l'applicazione; inoltre è presente un \textit{link} per richiedere l'invio di un nuovo codice di verifica e due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per verificare che il codice di verifica inserito sia lo stesso inviato all'indirizzo \textit{email} dell'utente, nel caso questo controllo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, altrimenti viene semplicemente mostrato un errore a schermo.}
@@ -258,28 +337,22 @@ Descrizione interfaccia grafica.
 	\classdesc{Generality}{la classe Generality implementa un componente grafico con mantenimento di stato con due caselle di testo per l'inserimento del nome e del cognome dell'utente che sta registrando una nuova identità digitale; inoltre sono presenti due pulsanti per scegliere la modalità di accesso all'applicazione una volta completata la procedura di registrazione. I pulsanti permettono la scelta tra una \textit{password} alfanumerica e i sensori biometrici del dispositivo. Se viene scelta la seconda opzione il componente grafico mostra la richiesta di sistema attraverso la quale viene chiesto all'utente di autenticarsi e solamente dopo aver superato il controllo biometrico l'utente può proseguire. Se invece viene scelta la \textit{password} allora viene istanziato e mostrato un componente grafico di classe registration.Password.\\
 	Prima di procedere con il controllo dei dati biometrici o con la visualizzazione del componente grafico per l'inserimento della \textit{password} viene effettuato un controllo per validare la il nome e il cognome inseriti, solo nel caso questo venga superato allora si procedere con quanto descritto in precedenza, altrimenti viene semplicemente mostrato un errore a schermo.}
 	
-	\classdesc{Header}{la classe Header implementa un componente grafico senza mantenimento di stato con un titolo parametrico e un'icona. Viene istanziato da ogni componente grafico che implementa una schermata dell'applicazione, il quale lo utilizza per standardizzare l'intestazione dell'applicazione stessa.}
-	
-	\classdesc{Home}{la classe Home implementa un componente grafico con mantenimento di stato con un componente grafico della classe Contact, un pulsante per la generazione del codice QR dell'indirizzo pubblico del \gls{walletg} dell'utente, un pulsante per l'inserimento di un nuovo documento e tanti componente grafico della classe Document quanti sono i documenti inseriti dall'utente. Per il reperimento di queste informazioni utilizza un'istanza della classe HomeState che contiene al suo interno un'istanza della classe Wallet che sfrutta per recuperare le informazioni dell'utente possessore.}
-	
-	\classdesc{Login}{la classe Login implementa un componente grafico senza mantenimento di stato con due pulsanti per scegliere se proseguire con il recupero di un'identità digitale precedentemente creata su un dispositivo differente oppure se crearne una nuova. Nel caso fosse già stata creata un'identità sul dispositivo corrente il componente grafico chiederà automaticamente all'utente di autenticarsi: se questi ha scelto l'autenticazione biometrica apparirà la richiesta di sistema e, se il controllo viene superato, viene istanziato e mostrato un componente grafico di classe Home, se invece l'utente ha scelto l'autenticazione tramite \textit{password} allora viene istanziato e mostrato un componente grafico di classe PasswordAuthentication.}
-	
-	\classdesc{login.Password}{la classe login.Password implementa un componente grafico con mantenimento di stato con due campi di testo per l'inserimento della \textit{password} da utilizzare, durante il recupero dell'identità precedentemente creata su un altro dispositivo, per accedere all'applicazione all'avvio successivo; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per validare la \textit{password} inserita, nel caso questo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, altrimenti viene semplicemente mostrato un errore a schermo.}
-	
 	\classdesc{registration.Password}{la classe registration.Password implementa un componente grafico con mantenimento di stato con due campi di testo per l'inserimento della \textit{password} da utilizzare per accedere all'applicazione una volta completata la procedura di registrazione; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per validare la \textit{password} inserita, nel caso questo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, altrimenti viene semplicemente mostrato un errore a schermo.}
-	
-	\classdesc{PasswordAuthentication}{la classe PasswordAuthentication implementa un componente grafico con mantenimento di stato con un campo di testo per l'inserimento della \textit{password} utilizzata per accedere all'applicazione da parte di un utente registrato; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per verificare che la \textit{password} inserita sia la stessa memorizzata nel \textit{database} locale per l'utente di quel dispositivo, nel caso questo controllo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, ossia la schermata di classe Home, altrimenti viene semplicemente mostrato un errore a schermo.}
 	
 	\classdesc{Phone}{la classe Phone implementa un componente grafico con mantenimento di stato con due campi di testo per l'inserimento del numero di telefono dell'utente che sta registrando una nuova identità digitale; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per validare il numero di telefono inserito, nel caso questo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, altrimenti viene semplicemente mostrato un errore a schermo.}
 	
 	\classdesc{PhoneConfirm}{la classe PhoneConfirm implementa un componente grafico con mantenimento di stato con una casella di testo in cui inserire il codice di verifica inviato tramite \gls{sms} al numero di telefono inserito in precedenza, in modo da garantire che sia di proprietà dell'utente che sta registrando la propria identità tramite l'applicazione; inoltre è presente un \textit{link} per richiedere l'invio di un nuovo codice di verifica e due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per verificare che il codice di verifica inserito sia lo stesso inviato al numero di telefono dell'utente, nel caso questo controllo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, altrimenti viene semplicemente mostrato un errore a schermo.}
 	
-	\classdesc{Qr}{la classe Qr implementa un componente grafico senza mantenimento di stato con un componente grafico della classe QrImage per la visualizzazione del codice QR associato all'indirizzo pubblico del \gls{walletg} dell'utente e un pulsante per tornare indietro alla schermata Home.}
-	
-	\classdesc{login.Seed}{la classe login.Seed implementa un componente grafico con mantenimento di stato con una casella di testo per consentire all'utente l'inserimento del codice mnemonico, utile per poter recuperare l'identità creata su un dispositivo differente da quello attualmente utilizzato; inoltre sono presenti due pulsanti, per tornare alla schermata precedente oppure passare a quella successiva. Quando l'utente preme il pulsante per avanzare viene effettuato un controllo per validare il codice mnemonico inserito, nel caso questo venga superato allora viene istanziato e mostrato il componente grafico della schermata successiva, ossia la schermata di classe Home, altrimenti viene semplicemente mostrato un errore a schermo.}
-	
-	\classdesc{registration.Seed}{la classe login.Seed implementa un componente grafico senza mantenimento di stato con una casella di testo contenente il codice mnemonico, utile per poter generare il \gls{walletg} associato all'identità creata sul dispositivo utilizzato; inoltre sono presenti tre pulsanti: per salvare il codice in formato \gls{pdf} sul dispositivo, per stamparlo tramite una stampante presente nella stessa rete locale del dispositivo e per passare alla schermata successiva. Quando l'utente preme il pulsante per avanzare viene generato il \gls{walletg} a partire dal codice visto in precedenza, da quel momento in poi non è più possibile reperire il codice mnemonico e viene istanziato e mostrato il componente grafico della schermata successiva, ossia la schermata di classe Home.}
+	\classdesc{registration.Seed}{la classe registration.Seed implementa un componente grafico senza mantenimento di stato con una casella di testo contenente il codice mnemonico, utile per poter generare il \gls{walletg} associato all'identità creata sul dispositivo utilizzato; inoltre sono presenti tre pulsanti: per salvare il codice in formato \gls{pdf} sul dispositivo, per stamparlo tramite una stampante presente nella stessa rete locale del dispositivo e per passare alla schermata successiva. Quando l'utente preme il pulsante per avanzare viene generato il \gls{walletg} a partire dal codice visto in precedenza, da quel momento in poi non è più possibile reperire il codice mnemonico e viene istanziato e mostrato il componente grafico della schermata successiva, ossia la schermata di classe Home.}
 \end{namespacedesc}
+
+\newpage
+
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[height=\textheight]{registration-seed} 
+	\caption{\textit{Layout} della classe registration.Seed}
+\end{figure}
 
 %**************************************************************
 \section{Codifica}
