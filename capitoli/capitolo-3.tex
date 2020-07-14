@@ -9,7 +9,14 @@
 \section{Struttura e funzionamento}
 
 La \gls{blockchaing} è un una tecnologia che si basa su un \textit{database} distribuito che viene acceduto contemporaneamente da più nodi di una rete \textit{peer-to-peer}, ossia una rete di macchine paritetiche che comunicano tra di loro direttamente, senza bisogno di passare attraverso dei nodi aventi delle funzioni di gestione della rete e del traffico presente al suo interno.\\
-Attraverso questa rete, i nodi possono effettuare delle transazioni senza il bisogno di un entità terza che faccia da garante intermediario, sfruttando le proprietà della crittografia. Infatti, tramite il suo impiego, le tecnologie \gls{blockchaing} permettono di garantire l'affidabilità sulla veridicità e autenticità delle operazioni e delle comunicazioni effettuate tra individui che non hanno fiducia l'uno dell'altro.\\
+Attraverso questa rete, i nodi possono effettuare delle transazioni senza il bisogno di un entità terza che faccia da garante intermediario, sfruttando le proprietà della crittografia. Infatti, tramite il suo impiego, le tecnologie \gls{blockchaing} permettono di garantire l'affidabilità sulla veridicità e autenticità delle operazioni e delle comunicazioni effettuate tra individui che non hanno fiducia l'uno dell'altro.
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[width=\textwidth]{blockchain} 
+	\caption{Esecuzione di una transazione tramite la \gls{blockchaing}}
+\end{figure}
+\newpage
+\noindent
 In questo contesto, per transazione tra due utenti di una \gls{blockchaing} si intende qualsiasi trasmissione di informazioni, le quali dovranno essere memorizzate all'interno del \textit{database} distribuito, in modo da essere accessibili da parte di tutti i nodi della rete. A questo scopo, le informazioni da trasferire vengono incluse in delle strutture dati chiamate blocchi; questi contengono al loro interno più transazioni e, affinché possano essere aggiunti alla \gls{blockchaing}, ne deve essere verificata la validità e l'affidabilità da parte di tutti i nodi della rete. Per compiere quest'operazione vengono utilizzati opportuni algoritmi di consenso distribuito il cui compito è il raggiungimento di un accordo condiviso su quali blocchi debbano essere aggiunti e quali invece scartati. Una volta che un blocco viene verificato ogni partecipante alla \gls{blockchaing} aggiorna la sua copia locale del \textit{database} con le nuove informazioni.\\
 Una \gls{blockchaing} può essere vista come l'insieme di tre parti distinte:
 
