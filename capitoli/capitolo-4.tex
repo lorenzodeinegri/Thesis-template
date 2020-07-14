@@ -17,7 +17,6 @@
 	\item il non ripudio, ossia impedire al creatore e mittente del documento di negare di averlo firmato digitalmente;
 	\item l'integrità, ossia certificare che il documento non sia stato in alcun modo alterato durante il trasporto dal mittente al destinatario.
 \end{itemize}
-
 Per ridurre la complessità di implementazione ed utilizzo di una \gls{blockchaing}, il progetto prevede la definizione di tre livelli \textit{software}, ciascuno con degli specifici compiti da portare a termine:
 
 \begin{itemize}
@@ -83,7 +82,6 @@ L'architettura del \gls{frameworkg}\glsfirstoccur{} si basa sui seguenti compone
 	\item Libreria di base;
 	\item Componenti grafici specifici per il \textit{design}.
 \end{itemize}
-
 Le applicazioni Flutter sono scritte utilizzando il linguaggio di programmazione Dart, di cui vengono sfruttate molte funzionalità avanzate. Tramite la macchina virtuale su cui viene eseguito il \gls{frameworkg}, è possibile usufruire della compilazione \gls{jit}\glsfirstoccur{} che fornisce allo sviluppatore l'opportunità di usare l'\textit{hot reload} durante le fasi di scrittura e test dell'applicazione. Questo meccanismo prevede l'iniezione delle modifiche fatte al codice sorgente direttamente all'interno del \textit{software} in esecuzione, in questo modo verranno subito riflesse all'interno dell'applicazione senza richiederne la ricompilazione e il riavvio. Tuttavia è presente anche una compilazione \gls{aot}\glsfirstoccur{}, che permette di ottenere eseguibili con elevate prestazioni, anche su dispositivi mobili.
 \\\\
 Il motore Flutter è scritto con il linguaggio di programmazione C++ e fornisce il supporto per effettuare le operazioni di \textit{rendering} della grafica a basso livello; funge inoltre da interfaccia verso le \gls{sdk} specifiche della piattaforma di esecuzione, come Android e iOS. Oltre a questo, implementa tutte le librerie che formano il nucleo del \gls{frameworkg} Flutter, fornendo le funzionalità necessarie per le animazioni, per la grafica, per le operazioni di \textit{input/output} e per il supporto all'accessibilità. Questo motore rappresenta quindi l'ambiente di esecuzione per le applicazioni scritte in Flutter.

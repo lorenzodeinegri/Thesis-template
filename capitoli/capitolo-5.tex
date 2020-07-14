@@ -17,7 +17,6 @@ Durante la prima parte dello stage, svolgendo le attività di studio e formazion
 	\item la gestione delle identità digitali e delle informazioni che le caratterizzano;
 	\item lo scambio di documenti con valore legale associati ad un'identità tramite la relativa firma elettronica.
 \end{itemize}
-
 Di conseguenza, l'obiettivo principale della seconda fase del progetto è  realizzare un prototipo che dimostrasse la fattibilità dell'implementazione di un'applicazione per dispositivi mobili inerente alle due precedenti tematiche. Questa doveva permettere agli utenti di registrare una propria \gls{ssi} e, una volta completata l'apposita procedura, di utilizzarla per certificare la paternità degli eventuali documenti caricati e poi condivisi con altri utenti, tramite il programma stesso.\\
 L'applicazione dovrà essere disponibile sia per dispositivi Android che per dispositivi iOS, mantenendo un'interfaccia grafica il più coerente e simile possibile su entrambi i sistemi operativi, indipendentemente dal quello su cui verrà eseguita, e fornendo le stesse funzionalità. \\
 In particolare, ogni utente dovrà poter:
@@ -28,7 +27,6 @@ In particolare, ogni utente dovrà poter:
 	\item accedere alla propria identità in modo sicuro;
 	\item utilizzare l'identità all'interno dell'applicazione per effettuare le diverse operazioni messe a disposizione.
 \end{itemize}
-
 Le prime tre funzionalità richiederanno l'esecuzione di alcune operazioni che, poste in una sequenza ordinata, andranno a formare una procedura che dovrà essere seguita ordinatamente per poter raggiungerne lo scopo.\\\\
 Per registrare una nuova identità sarà necessario inserire il proprio nome e cognome e scegliere il metodo di autenticazione desiderato tra quelli disponibili, ossia \textit{password} alfanumerica o dati biometrici; nel caso venga fatta la prima scelta, verrà richiesto l'inserimento, con successiva conferma, della \textit{password} desiderata, altrimenti sarà necessario autenticarsi con l'impronta digitale o con l'identificativo facciale prima di poter proseguire. Successivamente verrà chiesto di inserire il proprio indirizzo di posta elettronica e, una volta confermato, un codice di verifica numerico inviato all'utente tramite \textit{email} per certificare l'effettiva proprietà della casella indicata. La stessa operazione dovrà essere poi ripetuta per l'inserimento del numero di telefono cellulare: in questo caso la verifica verrà effettuata tramite \gls{sms}\glsfirstoccur. Infine verrà generato e visualizzato a schermo il codice mnemonico usato per generare il \gls{walletg} associato alla \gls{ssi} appena creata, e sarà possibile salvarlo in formato \gls{pdf}\glsfirstoccur{} all'interno della memoria del dispositivo, oppure stamparlo direttamente dall'applicazione. È di fondamentale importanza far capire all'utente che non deve smarrire questo codice, in quanto è l'unica informazione utilizzabile per ripristinare l'accesso alla propria identità.\\\\
 Per poter recuperare una vecchia identità ed accedervi con un nuovo dispositivo, diverso da quello utilizzato per crearla la prima volta, verrà prima richiesto il metodo di autenticazione desiderato, analogamente alla procedura di registrazione, e, dopo aver fornito i dati necessari, dovrà essere inserito il codice mnemonico generato durante la creazione della \gls{ssi}. Solo nel caso questo sia corretto l'utente potrà accedere alla propria identità, altrimenti la procedura terminerà con un'errore e, per poter utilizzare l'applicazione, sarà quindi indispensabile ripetere nuovamente il procedimento di registrazione dall'inizio.\\\\
@@ -46,12 +44,10 @@ Una volta all'interno dell'applicazione, le funzionalità che saranno a disposiz
 \subsection{Requisiti}
 
 L'obiettivo principale che si desidera raggiungere è l'implementazione di un \gls{poc} che dimostri la fattibilità dell'applicazione d'interesse per l'azienda, di conseguenza il progetto non prevede uno sviluppo \textit{software} completo, ma limitato a rendere disponibili le operazioni più significative. Quindi, dopo un'attenta analisi del problema proposto e delle funzionalità richieste per l'applicazione, tenendo anche conto del tempo rimasto a disposizione per il progetto di stage, sono stati individuati diversi tipi di requisiti, in base all'importanza e alla quantità di lavoro richiesta per riuscire a soddisfarli.\\
-Per identificare ogni requisito in modo univoco si è fatto utilizzo di un opportuno codice, il quale è strutturato nel modo seguente:\\
-
+Per identificare ogni requisito in modo univoco si è fatto utilizzo di un opportuno codice, il quale è strutturato nel modo seguente:
 \begin{center}
 	\textbf{R[T][P]-[N]}
 \end{center}
-
 Dove ogni lettera ha un preciso significato:
 
 \begin{itemize}
@@ -73,7 +69,6 @@ Dove ogni lettera ha un preciso significato:
 	
 	\item \textbf{N:} numero, intero progressivo maggiore di zero con funzione di identificativo del requisito.
 \end{itemize}
-
 Di seguito vengono riportati tutti i requisiti riguardanti lo sviluppo del \gls{poc}, suddivisi in tre tabelle, una per ogni tipologia.
 
 \rowcolors{1}{grayer}{white}
@@ -505,5 +500,5 @@ Di seguito viene riportato lo stato di tutti i requisiti al termine dello svilup
 	\caption{Tabella dello stato dei requisiti di vincolo}
 	\label{tab:stato-requisiti-vincolo}
 \end{longtable}
-
+\noindent
 L'applicazione, per quanto sia soltanto un \gls{poc} e quindi lontana dall'essere compiuta, può essere una base valida su cui l'azienda potrà costruire il \textit{software} completo che intende sviluppare. Infatti è stata progettata per essere facilmente estendibile sia in ampiezza, aggiungendo nuove funzionalità, che in profondità, raffinando quelle già esistenti. 
